@@ -177,6 +177,16 @@ def main():
                                  lora_alpha=our_args.lora_alpha,
                                  lora_dropout=0)
         model = get_peft_model(model, peft_config)
+        print(type(model))
+    if our_args.tuning_type == 'svd':
+        print(model)
+        from peft import get_peft_model, LoraConfig, TaskType
+        peft_config = LoraConfig(task_type=TaskType.SEQ_CLS, inference_mode=False, r=our_args.tensor_rank,
+                                 lora_alpha=our_args.lora_alpha,
+                                 #target_modules = ["query_proj", "value_proj"],
+                                 lora_dropout=0)
+        model = get_peft_model(model, peft_config)
+        print(model)
     if our_args.tuning_type == 'adapters':
         from peft_local import BottleneckConfig, get_peft_model, TaskType  # noqa: E402
         bottleneck_size: int = 64

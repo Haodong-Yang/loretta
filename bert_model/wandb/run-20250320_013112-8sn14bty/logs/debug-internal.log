@@ -1,0 +1,1126 @@
+2025-03-20 01:31:12,865 INFO    StreamThr :3870386 [internal.py:wandb_internal():86] W&B internal server running at pid: 3870386, started at: 2025-03-20 01:31:12.864177
+2025-03-20 01:31:12,867 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status
+2025-03-20 01:31:12,868 INFO    WriterThread:3870386 [datastore.py:open_for_write():87] open: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/run-8sn14bty.wandb
+2025-03-20 01:31:12,871 DEBUG   SenderThread:3870386 [sender.py:send():382] send: header
+2025-03-20 01:31:12,878 DEBUG   SenderThread:3870386 [sender.py:send():382] send: run
+2025-03-20 01:31:13,586 INFO    SenderThread:3870386 [dir_watcher.py:__init__():211] watching files in: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files
+2025-03-20 01:31:13,586 INFO    SenderThread:3870386 [sender.py:_start_run_threads():1136] run started: 8sn14bty with start time 1742405472.865304
+2025-03-20 01:31:13,595 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: check_version
+2025-03-20 01:31:13,595 DEBUG   SenderThread:3870386 [sender.py:send_request():409] send_request: check_version
+2025-03-20 01:31:13,649 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: run_start
+2025-03-20 01:31:13,855 DEBUG   HandlerThread:3870386 [system_info.py:__init__():27] System info init
+2025-03-20 01:31:13,855 DEBUG   HandlerThread:3870386 [system_info.py:__init__():42] System info init done
+2025-03-20 01:31:13,855 INFO    HandlerThread:3870386 [system_monitor.py:start():194] Starting system monitor
+2025-03-20 01:31:13,855 INFO    SystemMonitor:3870386 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2025-03-20 01:31:13,856 INFO    HandlerThread:3870386 [system_monitor.py:probe():214] Collecting system info
+2025-03-20 01:31:13,856 INFO    SystemMonitor:3870386 [interfaces.py:start():190] Started cpu monitoring
+2025-03-20 01:31:13,857 INFO    SystemMonitor:3870386 [interfaces.py:start():190] Started disk monitoring
+2025-03-20 01:31:13,858 INFO    SystemMonitor:3870386 [interfaces.py:start():190] Started gpuamd monitoring
+2025-03-20 01:31:13,859 INFO    SystemMonitor:3870386 [interfaces.py:start():190] Started memory monitoring
+2025-03-20 01:31:13,861 INFO    SystemMonitor:3870386 [interfaces.py:start():190] Started network monitoring
+2025-03-20 01:31:14,069 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:14,069 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:14,069 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:14,069 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:14,069 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:14,069 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:14,127 DEBUG   HandlerThread:3870386 [system_info.py:probe():151] Probing system
+2025-03-20 01:31:14,130 DEBUG   HandlerThread:3870386 [system_info.py:_probe_git():136] Probing git
+2025-03-20 01:31:14,144 DEBUG   HandlerThread:3870386 [system_info.py:_probe_git():144] Probing git done
+2025-03-20 01:31:14,144 DEBUG   HandlerThread:3870386 [system_info.py:probe():199] Probing system done
+2025-03-20 01:31:14,144 DEBUG   HandlerThread:3870386 [system_monitor.py:probe():223] {'os': 'Linux-5.14.21-150500.55.83_13.0.62-cray_shasta_c-x86_64-with-glibc2.31', 'python': '3.10.13', 'heartbeatAt': '2025-03-19T17:31:14.127707', 'startedAt': '2025-03-19T17:31:12.851376', 'docker': None, 'cuda': None, 'args': ('--data_dir=default', '--logging_dir=/scratch/pawsey1001/haodongyang/loretta/bert_model/logs/SST2-8-1e-4-deberta-base-svd--20250320013022', '--model_name_or_path=microsoft/deberta-base', '--tokenizer_name=microsoft/deberta-base', '--evaluation_strategy=steps', '--eval_steps=500', '--logging_steps=50', '--overwrite_output_dir', '--save_steps=10000', '--task_name=SST2', '--warmup_step=500', '--learning_rate=1e-4', '--num_train_epochs=10', '--per_device_train_batch_size=8', '--output_dir=//software/projects/pawsey1001/haodongyang/fakeHome/.vscode-server/cli/servers/Stable-ddc367ed5c8936efe395cffeec279b04ffd7db78/server/bin/remote-cli:/scratch/pawsey1001/haodongyang/envs/envs/bert/bin:/software/projects/pawsey1001/haodongyang/miniconda3/condabin:/opt/cray/pe/mpich/8.1.27/ofi/gnu/9.1/bin:/opt/cray/pe/mpich/8.1.27/bin:/opt/cray/pe/craype/2.7.23/bin:/opt/cray/pe/gcc/12.2.0/snos/bin:/software/pawsey/tools/pawseytools/bin:/opt/cray/pe/perftools/23.09.0/bin:/opt/cray/pe/papi/7.0.1.1/bin:/opt/cray/libfabric/1.15.2.0/bin:/opt/clmgr/sbin:/opt/clmgr/bin:/opt/sgi/sbin:/opt/sgi/bin:/home/haodongyang/.local/bin:/home/haodongyang/bin:/usr/local/bin:/usr/bin:/bin:/sbin:/opt/cray/pe/bin', '--max_seq_length=128', '--tuning_type=svd', '--do_train', '--do_eval', '--tensor_rank=8'), 'state': 'running', 'program': '/scratch/pawsey1001/haodongyang/loretta/bert_model/run_glue_v5.py', 'codePathLocal': 'run_glue_v5.py', 'codePath': 'bert_model/run_glue_v5.py', 'git': {'remote': 'https://github.com/Haodong-Yang/loretta.git', 'commit': 'c66bbb3fe0a717d04dd02e4c5278bf2b61016348'}, 'email': None, 'root': '/scratch/pawsey1001/haodongyang/loretta', 'host': 'nid002226', 'username': 'haodongyang', 'executable': '/scratch/pawsey1001/haodongyang/envs/envs/bert/bin/python', 'cpu_count': 64, 'cpu_count_logical': 128, 'cpu_freq': {'current': 2016.6631484375, 'min': 1500.0, 'max': 2000.0}, 'cpu_freq_per_core': [{'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 3337.576, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 3342.595, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}], 'disk': {'/': {'total': 125.1918716430664, 'used': 0.3862190246582031}}, 'gpu_count': 7, 'gpu_devices': [{'id': '0x7408', 'unique_id': '0xe7a2ba415fda9720', 'vbios_version': '113-D65201-046', 'performance_level': 'auto', 'max_power': '560.0', 'series': 'AMD INSTINCT MI200 (MCM) OAM LC MBA HPE C2', 'model': '0x0b0c', 'vendor': 'Advanced Micro Devices, Inc. [AMD/ATI]', 'sku': 'D65201', 'sclk_range': '500Mhz - 1700Mhz', 'mclk_range': '400Mhz - 1600Mhz'}, {'id': '0x7408', 'unique_id': '0x87b137ed380bd920', 'vbios_version': '113-D65201-046', 'performance_level': 'auto', 'max_power': '560.0', 'series': 'AMD INSTINCT MI200 (MCM) OAM LC MBA HPE C2', 'model': '0x0b0c', 'vendor': 'Advanced Micro Devices, Inc. [AMD/ATI]', 'sku': 'D65201', 'sclk_range': '500Mhz - 1700Mhz', 'mclk_range': '400Mhz - 1600Mhz'}, {'id': '0x7408', 'unique_id': '0x9a68ed34eac09000', 'vbios_version': '113-D65201-046', 'performance_level': 'auto', 'max_power': '0.0', 'series': 'AMD INSTINCT MI200 (MCM) OAM LC MBA HPE C2', 'model': '0x0b0c', 'vendor': 'Advanced Micro Devices, Inc. [AMD/ATI]', 'sku': 'D65201', 'sclk_range': '500Mhz - 1700Mhz', 'mclk_range': '400Mhz - 1600Mhz'}, {'id': '0x7408', 'unique_id': '0xbfb55bec3c7440df', 'vbios_version': '113-D65201-046', 'performance_level': 'auto', 'max_power': '560.0', 'series': 'AMD INSTINCT MI200 (MCM) OAM LC MBA HPE C2', 'model': '0x0b0c', 'vendor': 'Advanced Micro Devices, Inc. [AMD/ATI]', 'sku': 'D65201', 'sclk_range': '500Mhz - 1700Mhz', 'mclk_range': '400Mhz - 1600Mhz'}, {'id': '0x7408', 'unique_id': '0xec50cc892122ea26', 'vbios_version': '113-D65201-046', 'performance_level': 'auto', 'max_power': '0.0', 'series': 'AMD INSTINCT MI200 (MCM) OAM LC MBA HPE C2', 'model': '0x0b0c', 'vendor': 'Advanced Micro Devices, Inc. [AMD/ATI]', 'sku': 'D65201', 'sclk_range': '500Mhz - 1700Mhz', 'mclk_range': '400Mhz - 1600Mhz'}, {'id': '0x7408', 'unique_id': '0xc634c1e5df022d13', 'vbios_version': '113-D65201-046', 'performance_level': 'auto', 'max_power': '560.0', 'series': 'AMD INSTINCT MI200 (MCM) OAM LC MBA HPE C2', 'model': '0x0b0c', 'vendor': 'Advanced Micro Devices, Inc. [AMD/ATI]', 'sku': 'D65201', 'sclk_range': '500Mhz - 1700Mhz', 'mclk_range': '400Mhz - 1600Mhz'}, {'id': '0x7408', 'unique_id': '0x73f8b3de2396565e', 'vbios_version': '113-D65201-046', 'performance_level': 'auto', 'max_power': '0.0', 'series': 'AMD INSTINCT MI200 (MCM) OAM LC MBA HPE C2', 'model': '0x0b0c', 'vendor': 'Advanced Micro Devices, Inc. [AMD/ATI]', 'sku': 'D65201', 'sclk_range': '500Mhz - 1700Mhz', 'mclk_range': '400Mhz - 1600Mhz'}], 'memory': {'total': 250.3837432861328}}
+2025-03-20 01:31:14,144 INFO    HandlerThread:3870386 [system_monitor.py:probe():224] Finished collecting system info
+2025-03-20 01:31:14,144 INFO    HandlerThread:3870386 [system_monitor.py:probe():227] Publishing system info
+2025-03-20 01:31:14,144 DEBUG   HandlerThread:3870386 [system_info.py:_save_conda():208] Saving list of conda packages installed into the current environment
+2025-03-20 01:31:14,588 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_created():271] file/dir created: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/conda-environment.yaml
+2025-03-20 01:31:16,287 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:16,287 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:16,287 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:16,287 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:16,287 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:16,287 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:17,000 DEBUG   HandlerThread:3870386 [system_info.py:_save_conda():220] Saving conda packages done
+2025-03-20 01:31:17,004 INFO    HandlerThread:3870386 [system_monitor.py:probe():229] Finished publishing system info
+2025-03-20 01:31:17,018 DEBUG   SenderThread:3870386 [sender.py:send():382] send: files
+2025-03-20 01:31:17,018 INFO    SenderThread:3870386 [sender.py:_save_file():1403] saving file wandb-metadata.json with policy now
+2025-03-20 01:31:17,022 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: python_packages
+2025-03-20 01:31:17,022 DEBUG   SenderThread:3870386 [sender.py:send_request():409] send_request: python_packages
+2025-03-20 01:31:17,022 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: stop_status
+2025-03-20 01:31:17,023 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: internal_messages
+2025-03-20 01:31:17,025 DEBUG   SenderThread:3870386 [sender.py:send_request():409] send_request: stop_status
+2025-03-20 01:31:17,473 DEBUG   SenderThread:3870386 [sender.py:send():382] send: telemetry
+2025-03-20 01:31:17,590 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/conda-environment.yaml
+2025-03-20 01:31:17,591 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_created():271] file/dir created: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/requirements.txt
+2025-03-20 01:31:17,591 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_created():271] file/dir created: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/wandb-metadata.json
+2025-03-20 01:31:18,298 INFO    wandb-upload_0:3870386 [upload_job.py:push():131] Uploaded file /tmp/tmp0dzfebcrwandb/tk8sq8td-wandb-metadata.json
+2025-03-20 01:31:18,493 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:18,493 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:18,493 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:18,494 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:18,494 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:18,494 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:18,591 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_created():271] file/dir created: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:31:18,682 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:31:20,593 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:31:20,705 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:20,705 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:20,705 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:20,705 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:20,705 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:20,705 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:22,594 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:31:22,930 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:22,930 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:22,930 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:22,930 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:22,930 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:22,930 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:23,973 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:31:24,595 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:31:25,250 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:25,250 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:25,250 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:25,251 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:25,251 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:25,251 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:25,646 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: partial_history
+2025-03-20 01:31:25,647 DEBUG   SenderThread:3870386 [sender.py:send():382] send: history
+2025-03-20 01:31:25,647 DEBUG   SenderThread:3870386 [sender.py:send_request():409] send_request: summary_record
+2025-03-20 01:31:25,649 INFO    SenderThread:3870386 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-20 01:31:26,597 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:31:26,597 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_created():271] file/dir created: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/wandb-summary.json
+2025-03-20 01:31:27,459 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:27,459 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:27,459 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:27,459 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:27,459 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:27,459 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:28,598 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:31:29,189 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:31:29,665 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:29,665 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:29,665 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:29,665 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:29,665 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:29,665 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:30,599 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:31:31,877 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:31,877 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:31,877 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:31,877 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:31,877 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:31,877 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:32,023 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: stop_status
+2025-03-20 01:31:32,023 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: internal_messages
+2025-03-20 01:31:32,023 DEBUG   SenderThread:3870386 [sender.py:send_request():409] send_request: stop_status
+2025-03-20 01:31:32,600 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:31:34,081 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:34,081 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:34,081 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:34,081 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:34,081 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:34,082 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:34,482 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:31:34,601 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:31:36,290 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:36,290 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:36,290 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:36,290 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:36,290 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:36,290 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:36,602 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:31:38,497 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:38,497 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:38,497 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:38,497 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:38,497 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:38,497 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:38,603 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:31:39,753 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:31:40,604 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:31:40,705 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:40,705 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:40,705 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:40,705 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:40,705 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:40,705 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:42,604 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:31:42,911 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:42,911 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:42,911 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:42,911 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:42,911 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:42,911 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:44,605 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:31:44,870 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:31:45,118 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:45,118 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:45,118 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:45,118 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:45,118 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:45,118 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:45,607 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/config.yaml
+2025-03-20 01:31:46,607 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:31:47,031 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: stop_status
+2025-03-20 01:31:47,031 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: internal_messages
+2025-03-20 01:31:47,031 DEBUG   SenderThread:3870386 [sender.py:send_request():409] send_request: stop_status
+2025-03-20 01:31:47,343 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:47,343 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:47,343 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:47,343 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:47,343 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:47,343 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:48,608 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:31:49,568 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:49,569 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:49,569 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:49,569 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:49,569 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:49,569 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:50,175 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:31:50,546 DEBUG   SenderThread:3870386 [sender.py:send():382] send: config
+2025-03-20 01:31:50,590 DEBUG   SenderThread:3870386 [sender.py:send():382] send: metric
+2025-03-20 01:31:50,590 DEBUG   SenderThread:3870386 [sender.py:send():382] send: telemetry
+2025-03-20 01:31:50,590 DEBUG   SenderThread:3870386 [sender.py:send():382] send: metric
+2025-03-20 01:31:50,590 WARNING SenderThread:3870386 [sender.py:send_metric():1354] Seen metric with glob (shouldn't happen)
+2025-03-20 01:31:50,591 DEBUG   SenderThread:3870386 [sender.py:send():382] send: telemetry
+2025-03-20 01:31:50,591 DEBUG   SenderThread:3870386 [sender.py:send():382] send: telemetry
+2025-03-20 01:31:50,591 DEBUG   SenderThread:3870386 [sender.py:send():382] send: config
+2025-03-20 01:31:50,609 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:31:51,781 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:51,781 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:51,781 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:51,781 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:51,781 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:51,781 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:52,610 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:31:53,988 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:53,988 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:53,988 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:53,988 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:53,988 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:53,988 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:55,592 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:31:56,212 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:56,213 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:56,213 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:56,213 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:56,213 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:56,213 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:58,647 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:58,648 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:58,648 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:58,648 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:31:58,648 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:31:58,648 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:00,615 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:32:00,844 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:32:01,042 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:01,043 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:01,043 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:01,043 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:01,043 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:01,043 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:02,025 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: stop_status
+2025-03-20 01:32:02,025 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: internal_messages
+2025-03-20 01:32:02,026 DEBUG   SenderThread:3870386 [sender.py:send_request():409] send_request: stop_status
+2025-03-20 01:32:02,616 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:32:03,487 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:03,487 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:03,487 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:03,487 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:03,487 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:03,487 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:04,618 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:32:05,904 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:05,904 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:05,904 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:05,904 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:05,904 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:05,904 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:06,349 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:32:06,620 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:32:08,327 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:08,328 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:08,328 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:08,328 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:08,329 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:08,329 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:08,621 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:32:10,623 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:32:10,712 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:10,712 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:10,712 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:10,712 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:10,712 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:10,712 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:11,850 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:32:12,624 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:32:13,142 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:13,142 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:13,142 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:13,142 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:13,142 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:13,142 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:13,862 DEBUG   SystemMonitor:3870386 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2025-03-20 01:32:13,944 DEBUG   SenderThread:3870386 [sender.py:send():382] send: telemetry
+2025-03-20 01:32:13,945 DEBUG   SenderThread:3870386 [sender.py:send():382] send: stats
+2025-03-20 01:32:14,626 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:32:15,553 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:15,554 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:15,554 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:15,554 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:15,554 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:15,554 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:16,627 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:32:17,024 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: stop_status
+2025-03-20 01:32:17,025 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: internal_messages
+2025-03-20 01:32:17,026 DEBUG   SenderThread:3870386 [sender.py:send_request():409] send_request: stop_status
+2025-03-20 01:32:17,344 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:32:17,970 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:17,970 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:17,970 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:17,970 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:17,970 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:17,970 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:18,630 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/config.yaml
+2025-03-20 01:32:18,630 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:32:20,392 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:20,393 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:20,393 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:20,393 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:20,393 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:20,393 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:20,632 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:32:22,633 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:32:22,810 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:22,811 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:22,811 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:22,811 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:22,811 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:22,811 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:22,812 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:32:24,635 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:32:25,216 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:25,216 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:25,216 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:25,216 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:25,217 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:25,217 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:26,636 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:32:27,624 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:27,624 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:27,624 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:27,624 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:27,624 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:27,624 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:28,295 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:32:28,638 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:32:30,040 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:30,040 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:30,040 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:30,040 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:30,040 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:30,040 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:30,639 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:32:31,699 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: partial_history
+2025-03-20 01:32:31,700 DEBUG   SenderThread:3870386 [sender.py:send():382] send: metric
+2025-03-20 01:32:31,701 DEBUG   SenderThread:3870386 [sender.py:send():382] send: metric
+2025-03-20 01:32:31,701 DEBUG   SenderThread:3870386 [sender.py:send():382] send: metric
+2025-03-20 01:32:31,701 DEBUG   SenderThread:3870386 [sender.py:send():382] send: metric
+2025-03-20 01:32:31,701 DEBUG   SenderThread:3870386 [sender.py:send():382] send: history
+2025-03-20 01:32:31,701 DEBUG   SenderThread:3870386 [sender.py:send_request():409] send_request: summary_record
+2025-03-20 01:32:31,703 INFO    SenderThread:3870386 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-20 01:32:32,025 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: stop_status
+2025-03-20 01:32:32,026 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: internal_messages
+2025-03-20 01:32:32,026 DEBUG   SenderThread:3870386 [sender.py:send_request():409] send_request: stop_status
+2025-03-20 01:32:32,449 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:32,449 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:32,450 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:32,450 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:32,450 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:32,450 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:32,641 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:32:32,642 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/wandb-summary.json
+2025-03-20 01:32:33,741 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:32:34,643 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:32:34,888 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:34,888 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:34,888 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:34,888 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:34,888 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:34,888 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:36,645 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:32:37,311 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:37,311 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:37,311 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:37,311 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:37,311 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:37,311 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:38,646 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:32:39,237 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:32:39,741 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:39,741 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:39,741 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:39,741 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:39,741 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:39,741 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:40,647 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:32:42,144 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:42,144 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:42,144 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:42,144 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:42,144 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:42,145 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:42,649 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:32:43,945 DEBUG   SenderThread:3870386 [sender.py:send():382] send: stats
+2025-03-20 01:32:44,602 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:44,602 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:44,603 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:44,603 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:44,603 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:44,603 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:44,651 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:32:44,669 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:32:46,652 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:32:47,024 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:47,024 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:47,025 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:47,025 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:47,025 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:47,025 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:47,025 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: stop_status
+2025-03-20 01:32:47,026 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: internal_messages
+2025-03-20 01:32:47,026 DEBUG   SenderThread:3870386 [sender.py:send_request():409] send_request: stop_status
+2025-03-20 01:32:48,654 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:32:49,456 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:49,457 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:49,457 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:49,457 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:49,457 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:49,457 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:50,101 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:32:50,656 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/config.yaml
+2025-03-20 01:32:50,657 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:32:51,895 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:51,895 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:51,895 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:51,895 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:51,895 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:51,895 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:52,658 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:32:54,331 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:54,332 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:54,332 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:54,332 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:54,332 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:54,332 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:54,660 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:32:55,535 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:32:56,661 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:32:56,770 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:56,770 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:56,770 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:56,770 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:56,770 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:56,770 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:58,663 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:32:59,207 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:59,207 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:59,207 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:59,207 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:32:59,207 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:32:59,207 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:00,665 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:33:00,927 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:33:01,636 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:01,637 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:01,637 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:01,637 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:01,637 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:01,637 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:02,025 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: stop_status
+2025-03-20 01:33:02,026 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: internal_messages
+2025-03-20 01:33:02,026 DEBUG   SenderThread:3870386 [sender.py:send_request():409] send_request: stop_status
+2025-03-20 01:33:02,666 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:33:04,060 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:04,060 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:04,060 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:04,060 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:04,060 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:04,060 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:04,668 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:33:05,690 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: partial_history
+2025-03-20 01:33:05,691 DEBUG   SenderThread:3870386 [sender.py:send():382] send: history
+2025-03-20 01:33:05,691 DEBUG   SenderThread:3870386 [sender.py:send_request():409] send_request: summary_record
+2025-03-20 01:33:05,692 INFO    SenderThread:3870386 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-20 01:33:06,361 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:33:06,486 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:06,486 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:06,486 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:06,486 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:06,486 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:06,487 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:06,670 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:33:06,671 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/wandb-summary.json
+2025-03-20 01:33:08,672 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:33:08,926 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:08,927 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:08,927 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:08,927 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:08,927 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:08,927 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:10,673 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:33:11,353 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:11,353 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:11,353 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:11,353 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:11,353 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:11,353 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:11,739 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:33:12,675 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:33:13,776 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:13,776 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:13,776 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:13,776 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:13,776 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:13,776 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:13,949 DEBUG   SenderThread:3870386 [sender.py:send():382] send: stats
+2025-03-20 01:33:14,676 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:33:16,208 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:16,208 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:16,208 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:16,208 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:16,208 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:16,208 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:16,678 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:33:17,026 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: stop_status
+2025-03-20 01:33:17,026 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: internal_messages
+2025-03-20 01:33:17,026 DEBUG   SenderThread:3870386 [sender.py:send_request():409] send_request: stop_status
+2025-03-20 01:33:17,452 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:33:18,631 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:18,631 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:18,632 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:18,632 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:18,632 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:18,632 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:18,679 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:33:20,680 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:33:21,077 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:21,077 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:21,077 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:21,077 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:21,077 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:21,077 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:22,535 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:33:22,681 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:33:23,510 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:23,510 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:23,510 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:23,510 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:23,511 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:23,511 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:24,683 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:33:25,934 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:25,934 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:25,934 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:25,934 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:25,934 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:25,934 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:26,684 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:33:27,953 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:33:28,356 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:28,357 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:28,357 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:28,357 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:28,358 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:28,358 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:28,685 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:33:30,686 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:33:30,780 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:30,780 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:30,780 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:30,781 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:30,781 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:30,781 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:32,026 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: stop_status
+2025-03-20 01:33:32,026 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: internal_messages
+2025-03-20 01:33:32,026 DEBUG   SenderThread:3870386 [sender.py:send_request():409] send_request: stop_status
+2025-03-20 01:33:32,687 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:33:33,230 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:33,230 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:33,230 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:33,231 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:33,231 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:33,231 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:33,341 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:33:34,689 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:33:35,660 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:35,660 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:35,660 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:35,661 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:35,661 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:35,661 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:36,690 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:33:38,082 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:38,083 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:38,083 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:38,083 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:38,083 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:38,083 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:38,692 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:33:38,753 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:33:39,427 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: partial_history
+2025-03-20 01:33:39,428 DEBUG   SenderThread:3870386 [sender.py:send():382] send: history
+2025-03-20 01:33:39,428 DEBUG   SenderThread:3870386 [sender.py:send_request():409] send_request: summary_record
+2025-03-20 01:33:39,430 INFO    SenderThread:3870386 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-20 01:33:39,694 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/wandb-summary.json
+2025-03-20 01:33:40,507 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:40,508 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:40,508 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:40,508 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:40,508 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:40,508 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:40,694 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:33:42,696 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:33:42,939 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:42,939 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:42,939 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:42,939 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:42,939 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:42,939 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:43,951 DEBUG   SenderThread:3870386 [sender.py:send():382] send: stats
+2025-03-20 01:33:43,953 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:33:44,698 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:33:45,386 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:45,387 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:45,387 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:45,387 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:45,387 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:45,387 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:46,699 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:33:47,026 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: stop_status
+2025-03-20 01:33:47,026 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: internal_messages
+2025-03-20 01:33:47,027 DEBUG   SenderThread:3870386 [sender.py:send_request():409] send_request: stop_status
+2025-03-20 01:33:47,815 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:47,815 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:47,815 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:47,815 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:47,815 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:47,815 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:48,701 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:33:49,598 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:33:50,253 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:50,253 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:50,253 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:50,253 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:50,253 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:50,253 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:50,703 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:33:52,690 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:52,690 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:52,691 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:52,691 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:52,691 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:52,691 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:52,704 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:33:54,706 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:33:54,984 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:33:55,116 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:55,117 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:55,117 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:55,117 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:55,117 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:55,117 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:56,707 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:33:57,554 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:57,878 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:57,878 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:57,878 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:57,879 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:33:57,879 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:33:58,708 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:34:00,307 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:00,307 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:00,307 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:00,308 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:00,308 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:00,308 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:00,377 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:34:00,710 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:34:02,026 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: stop_status
+2025-03-20 01:34:02,027 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: internal_messages
+2025-03-20 01:34:02,027 DEBUG   SenderThread:3870386 [sender.py:send_request():409] send_request: stop_status
+2025-03-20 01:34:02,711 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:34:02,735 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:02,735 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:02,735 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:02,735 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:02,735 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:02,735 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:04,712 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:34:05,161 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:05,161 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:05,161 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:05,161 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:05,161 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:05,161 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:05,777 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:34:06,714 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:34:07,603 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:07,603 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:07,603 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:07,603 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:07,603 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:07,603 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:08,716 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:34:09,976 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:09,977 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:09,977 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:09,977 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:09,977 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:09,977 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:10,718 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:34:11,203 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:34:12,412 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:12,413 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:12,413 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:12,413 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:12,414 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:12,414 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:12,720 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:34:13,243 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: partial_history
+2025-03-20 01:34:13,245 DEBUG   SenderThread:3870386 [sender.py:send():382] send: history
+2025-03-20 01:34:13,245 DEBUG   SenderThread:3870386 [sender.py:send_request():409] send_request: summary_record
+2025-03-20 01:34:13,247 INFO    SenderThread:3870386 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-20 01:34:13,721 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/wandb-summary.json
+2025-03-20 01:34:13,953 DEBUG   SenderThread:3870386 [sender.py:send():382] send: stats
+2025-03-20 01:34:14,722 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:34:14,846 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:14,846 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:14,846 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:14,846 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:14,846 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:14,846 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:16,650 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:34:16,723 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:34:17,026 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: stop_status
+2025-03-20 01:34:17,026 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: internal_messages
+2025-03-20 01:34:17,027 DEBUG   SenderThread:3870386 [sender.py:send_request():409] send_request: stop_status
+2025-03-20 01:34:17,275 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:17,275 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:17,276 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:17,276 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:17,276 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:17,276 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:18,725 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:34:19,727 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:19,727 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:19,727 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:19,727 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:19,727 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:19,727 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:20,726 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:34:22,171 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:22,171 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:22,171 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:22,171 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:22,171 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:22,171 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:22,194 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:34:22,727 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:34:24,595 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:24,595 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:24,595 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:24,595 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:24,596 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:24,596 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:24,729 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:34:26,730 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:34:27,029 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:27,029 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:27,029 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:27,029 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:27,029 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:27,029 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:27,806 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:34:28,732 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:34:29,460 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:29,460 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:29,460 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:29,460 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:29,460 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:29,460 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:30,734 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:34:31,908 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:31,908 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:31,908 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:31,908 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:31,908 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:31,908 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:32,026 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: stop_status
+2025-03-20 01:34:32,027 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: internal_messages
+2025-03-20 01:34:32,027 DEBUG   SenderThread:3870386 [sender.py:send_request():409] send_request: stop_status
+2025-03-20 01:34:32,735 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:34:33,472 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:34:34,348 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:34,349 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:34,349 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:34,349 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:34,349 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:34,349 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:34,736 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:34:36,737 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:34:36,800 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:36,800 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:36,800 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:36,801 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:36,801 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:36,801 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:38,740 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:34:39,030 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:34:39,247 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:39,247 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:39,247 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:39,247 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:39,248 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:39,248 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:40,742 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:34:41,690 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:41,690 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:41,691 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:41,691 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:41,691 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:41,691 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:42,743 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:34:43,956 DEBUG   SenderThread:3870386 [sender.py:send():382] send: stats
+2025-03-20 01:34:44,117 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:44,118 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:44,119 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:44,119 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:44,119 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:44,119 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:44,568 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:34:44,744 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:34:46,583 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:46,583 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:46,583 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:46,583 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:46,583 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:46,583 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:46,747 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:34:47,026 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: stop_status
+2025-03-20 01:34:47,027 DEBUG   SenderThread:3870386 [sender.py:send_request():409] send_request: stop_status
+2025-03-20 01:34:47,027 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: internal_messages
+2025-03-20 01:34:48,040 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: partial_history
+2025-03-20 01:34:48,042 DEBUG   SenderThread:3870386 [sender.py:send():382] send: history
+2025-03-20 01:34:48,042 DEBUG   SenderThread:3870386 [sender.py:send_request():409] send_request: summary_record
+2025-03-20 01:34:48,044 INFO    SenderThread:3870386 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-20 01:34:48,750 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:34:48,750 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/wandb-summary.json
+2025-03-20 01:34:49,027 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:49,027 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:49,027 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:49,027 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:49,027 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:49,028 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:50,098 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:34:50,752 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:34:51,464 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:51,464 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:51,464 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:51,464 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:51,464 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:51,464 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:52,753 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:34:53,896 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:53,896 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:53,897 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:53,897 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:53,897 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:53,897 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:54,755 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:34:55,571 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:34:56,332 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:56,332 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:56,332 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:56,332 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:56,332 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:56,332 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:56,756 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:34:58,758 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:34:58,784 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:58,784 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:58,785 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:58,785 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:34:58,785 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:34:58,785 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:00,760 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:35:01,051 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:35:01,230 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:01,231 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:01,231 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:01,231 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:01,231 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:01,231 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:02,026 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: stop_status
+2025-03-20 01:35:02,027 DEBUG   SenderThread:3870386 [sender.py:send_request():409] send_request: stop_status
+2025-03-20 01:35:02,027 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: internal_messages
+2025-03-20 01:35:02,761 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:35:03,682 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:03,682 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:03,682 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:03,682 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:03,682 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:03,682 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:04,763 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:35:06,125 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:06,353 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:06,353 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:06,354 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:06,354 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:06,354 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:06,537 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:35:06,764 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:35:08,766 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:35:08,802 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:08,803 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:08,803 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:08,803 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:08,803 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:08,803 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:10,767 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:35:11,256 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:11,384 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:11,384 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:11,384 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:11,384 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:11,384 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:12,033 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:35:12,769 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:35:13,815 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:13,815 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:13,815 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:13,815 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:13,815 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:13,815 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:13,959 DEBUG   SenderThread:3870386 [sender.py:send():382] send: stats
+2025-03-20 01:35:14,770 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:35:16,217 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:16,218 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:16,218 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:16,218 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:16,218 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:16,218 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:16,772 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:35:17,027 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: stop_status
+2025-03-20 01:35:17,027 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: internal_messages
+2025-03-20 01:35:17,028 DEBUG   SenderThread:3870386 [sender.py:send_request():409] send_request: stop_status
+2025-03-20 01:35:17,358 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:35:18,681 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:18,681 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:18,682 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:18,682 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:18,682 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:18,682 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:18,773 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:35:20,775 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:35:21,124 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:21,124 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:21,124 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:21,124 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:21,125 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:21,125 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:22,282 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: partial_history
+2025-03-20 01:35:22,283 DEBUG   SenderThread:3870386 [sender.py:send():382] send: history
+2025-03-20 01:35:22,283 DEBUG   SenderThread:3870386 [sender.py:send_request():409] send_request: summary_record
+2025-03-20 01:35:22,285 INFO    SenderThread:3870386 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-20 01:35:22,778 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:35:22,778 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/wandb-summary.json
+2025-03-20 01:35:22,960 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:35:23,569 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:23,569 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:23,569 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:23,569 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:23,569 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:23,569 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:24,779 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:35:26,021 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:26,021 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:26,021 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:26,021 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:26,021 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:26,021 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:26,781 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:35:28,394 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:35:28,433 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:28,433 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:28,433 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:28,433 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:28,434 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:28,434 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:28,782 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:35:30,784 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:35:30,882 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:30,882 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:30,882 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:30,882 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:30,882 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:30,882 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:32,027 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: stop_status
+2025-03-20 01:35:32,027 DEBUG   SenderThread:3870386 [sender.py:send_request():409] send_request: stop_status
+2025-03-20 01:35:32,028 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: internal_messages
+2025-03-20 01:35:32,785 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:35:33,307 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:33,307 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:33,307 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:33,307 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:33,307 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:33,307 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:33,865 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:35:34,787 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:35:35,738 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:35,739 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:35,739 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:35,739 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:35,739 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:35,739 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:36,788 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:35:38,167 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:38,167 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:38,167 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:38,167 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:38,168 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:38,168 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:38,789 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:35:39,333 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:35:40,606 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:40,606 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:40,606 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:40,606 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:40,606 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:40,606 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:40,791 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:35:42,792 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:35:43,033 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:43,033 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:43,033 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:43,033 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:43,033 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:43,033 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:43,961 DEBUG   SenderThread:3870386 [sender.py:send():382] send: stats
+2025-03-20 01:35:44,794 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:35:44,870 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:35:45,464 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:45,464 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:45,464 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:45,465 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:45,465 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:45,465 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:46,795 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:35:47,027 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: stop_status
+2025-03-20 01:35:47,027 DEBUG   SenderThread:3870386 [sender.py:send_request():409] send_request: stop_status
+2025-03-20 01:35:47,028 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: internal_messages
+2025-03-20 01:35:47,899 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:47,899 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:47,899 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:47,899 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:47,899 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:47,899 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:48,797 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:35:50,326 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:50,326 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:50,326 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:50,326 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:50,326 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:50,326 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:50,339 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:35:50,799 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:35:52,744 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:52,744 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:52,744 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:52,744 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:52,745 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:52,745 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:52,800 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:35:54,802 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:35:55,158 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:55,158 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:55,158 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:55,159 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:55,159 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:55,159 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:55,754 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:35:56,445 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: partial_history
+2025-03-20 01:35:56,447 DEBUG   SenderThread:3870386 [sender.py:send():382] send: history
+2025-03-20 01:35:56,447 DEBUG   SenderThread:3870386 [sender.py:send_request():409] send_request: summary_record
+2025-03-20 01:35:56,449 INFO    SenderThread:3870386 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-20 01:35:56,804 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:35:56,805 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/wandb-summary.json
+2025-03-20 01:35:57,592 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:57,593 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:57,593 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:57,593 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:57,593 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:57,593 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:58,805 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:35:59,997 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:59,998 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:59,998 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:59,999 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:35:59,999 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:35:59,999 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:36:00,807 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:36:01,163 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:36:02,027 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: stop_status
+2025-03-20 01:36:02,028 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: internal_messages
+2025-03-20 01:36:02,028 DEBUG   SenderThread:3870386 [sender.py:send_request():409] send_request: stop_status
+2025-03-20 01:36:02,422 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:36:02,422 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:36:02,423 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:36:02,423 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:36:02,423 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:36:02,423 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:36:02,808 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:36:04,809 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:36:04,828 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:36:04,829 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:36:04,829 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:36:04,829 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:36:04,829 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:36:04,829 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:36:06,581 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:36:06,811 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:36:07,245 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:36:07,245 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:36:07,246 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:36:07,246 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:36:07,246 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:36:07,246 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:36:08,813 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:36:09,587 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:36:09,587 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:36:09,587 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:36:09,587 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:36:09,587 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:36:09,587 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:36:10,814 INFO    Thread-12 :3870386 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250320_013112-8sn14bty/files/output.log
+2025-03-20 01:36:11,793 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:36:11,794 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:36:11,794 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:36:11,794 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:36:11,794 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:36:11,794 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:36:12,255 DEBUG   HandlerThread:3870386 [handler.py:handle_request():146] handle_request: status_report
+2025-03-20 01:36:13,962 DEBUG   SenderThread:3870386 [sender.py:send():382] send: stats
+2025-03-20 01:36:14,000 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:36:14,000 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:36:14,000 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:36:14,000 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:36:14,000 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-20 01:36:14,000 WARNING gpuamd    :3870386 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-20 01:36:14,400 INFO    cpu       :3870386 [interfaces.py:monitor():140] Process cpu has exited.
+2025-03-20 01:36:14,400 DEBUG   SystemMonitor:3870386 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2025-03-20 01:36:14,401 DEBUG   SystemMonitor:3870386 [system_monitor.py:_start():183] Publishing last batch of metrics
+2025-03-20 01:36:14,402 DEBUG   SenderThread:3870386 [sender.py:send():382] send: stats
+2025-03-20 01:36:16,727 INFO    MainThread:3870386 [internal.py:handle_exit():76] Internal process exited

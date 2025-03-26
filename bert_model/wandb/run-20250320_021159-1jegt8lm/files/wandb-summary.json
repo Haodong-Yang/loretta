@@ -1,0 +1,1 @@
+{"Total(M)": 167.811172, "Trainable(M)": 0.296546, "_timestamp": 1742408163.3620281, "_runtime": 244.22424817085266, "_step": 7, "train/loss": 0.692, "train/grad_norm": 2.7020089626312256, "train/learning_rate": 0.0001, "train/epoch": 0.04157263332937403, "train/global_step": 350}

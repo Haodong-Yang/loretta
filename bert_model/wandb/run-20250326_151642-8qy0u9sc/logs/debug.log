@@ -1,0 +1,28 @@
+2025-03-26 15:16:42,083 INFO    MainThread:2393794 [wandb_setup.py:_flush():76] Current SDK version is 0.16.2
+2025-03-26 15:16:42,084 INFO    MainThread:2393794 [wandb_setup.py:_flush():76] Configure stats pid to 2393794
+2025-03-26 15:16:42,084 INFO    MainThread:2393794 [wandb_setup.py:_flush():76] Loading settings from /scratch/pawsey1001/haodongyang/.config/wandb/settings
+2025-03-26 15:16:42,084 INFO    MainThread:2393794 [wandb_setup.py:_flush():76] Loading settings from /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/settings
+2025-03-26 15:16:42,084 WARNING MainThread:2393794 [wandb_setup.py:_flush():76] Unknown environment variable: WANDB_LOG_MODEL
+2025-03-26 15:16:42,084 INFO    MainThread:2393794 [wandb_setup.py:_flush():76] Loading settings from environment variables: {'start_method': 'thread'}
+2025-03-26 15:16:42,084 INFO    MainThread:2393794 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2025-03-26 15:16:42,084 INFO    MainThread:2393794 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'bert_model/run_glue_v5.py', 'program_abspath': '/scratch/pawsey1001/haodongyang/loretta/bert_model/run_glue_v5.py', 'program': '/scratch/pawsey1001/haodongyang/loretta/bert_model/run_glue_v5.py'}
+2025-03-26 15:16:42,084 INFO    MainThread:2393794 [wandb_init.py:_log_setup():526] Logging user logs to /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250326_151642-8qy0u9sc/logs/debug.log
+2025-03-26 15:16:42,084 INFO    MainThread:2393794 [wandb_init.py:_log_setup():527] Logging internal logs to /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250326_151642-8qy0u9sc/logs/debug-internal.log
+2025-03-26 15:16:42,084 INFO    MainThread:2393794 [wandb_init.py:init():566] calling init triggers
+2025-03-26 15:16:42,084 INFO    MainThread:2393794 [wandb_init.py:init():573] wandb.init called with sweep_config: {}
+config: {}
+2025-03-26 15:16:42,084 INFO    MainThread:2393794 [wandb_init.py:init():616] starting backend
+2025-03-26 15:16:42,084 INFO    MainThread:2393794 [wandb_init.py:init():620] setting up manager
+2025-03-26 15:16:42,086 INFO    MainThread:2393794 [wandb_init.py:init():628] backend started and connected
+2025-03-26 15:16:42,088 INFO    MainThread:2393794 [wandb_init.py:init():720] updated telemetry
+2025-03-26 15:16:42,096 INFO    MainThread:2393794 [wandb_init.py:init():753] communicating run to backend with 90.0 second timeout
+2025-03-26 15:16:42,898 INFO    MainThread:2393794 [wandb_run.py:_on_init():2254] communicating current version
+2025-03-26 15:16:42,950 INFO    MainThread:2393794 [wandb_run.py:_on_init():2263] got version response upgrade_message: "wandb version 0.19.8 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2025-03-26 15:16:42,951 INFO    MainThread:2393794 [wandb_init.py:init():804] starting run threads in backend
+2025-03-26 15:16:44,702 INFO    MainThread:2393794 [wandb_run.py:_console_start():2233] atexit reg
+2025-03-26 15:16:44,702 INFO    MainThread:2393794 [wandb_run.py:_redirect():2088] redirect: wrap_raw
+2025-03-26 15:16:44,703 INFO    MainThread:2393794 [wandb_run.py:_redirect():2153] Wrapping output streams.
+2025-03-26 15:16:44,703 INFO    MainThread:2393794 [wandb_run.py:_redirect():2178] Redirects installed.
+2025-03-26 15:16:44,703 INFO    MainThread:2393794 [wandb_init.py:init():847] run started, returning control to user process
+2025-03-26 15:17:03,888 WARNING MsgRouterThr:2393794 [router.py:message_loop():77] message_loop has been closed

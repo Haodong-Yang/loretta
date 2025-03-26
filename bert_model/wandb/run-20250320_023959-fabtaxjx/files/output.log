@@ -1,0 +1,203 @@
+Some weights of DebertaForSequenceClassification were not initialized from the model checkpoint at microsoft/deberta-base and are newly initialized: ['classifier.bias', 'classifier.weight', 'pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+name base_model.model.deberta.encoder.layer.0.attention.self.in_proj.lora_A.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.0.attention.self.in_proj.lora_B.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.0.attention.self.in_proj.lora_E.default.weight shape torch.Size([8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.1.attention.self.in_proj.lora_A.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.1.attention.self.in_proj.lora_B.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.1.attention.self.in_proj.lora_E.default.weight shape torch.Size([8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.2.attention.self.in_proj.lora_A.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.2.attention.self.in_proj.lora_B.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.2.attention.self.in_proj.lora_E.default.weight shape torch.Size([8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.3.attention.self.in_proj.lora_A.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.3.attention.self.in_proj.lora_B.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.3.attention.self.in_proj.lora_E.default.weight shape torch.Size([8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.4.attention.self.in_proj.lora_A.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.4.attention.self.in_proj.lora_B.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.4.attention.self.in_proj.lora_E.default.weight shape torch.Size([8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.5.attention.self.in_proj.lora_A.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.5.attention.self.in_proj.lora_B.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.5.attention.self.in_proj.lora_E.default.weight shape torch.Size([8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.6.attention.self.in_proj.lora_A.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.6.attention.self.in_proj.lora_B.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.6.attention.self.in_proj.lora_E.default.weight shape torch.Size([8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.7.attention.self.in_proj.lora_A.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.7.attention.self.in_proj.lora_B.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.7.attention.self.in_proj.lora_E.default.weight shape torch.Size([8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.8.attention.self.in_proj.lora_A.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.8.attention.self.in_proj.lora_B.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.8.attention.self.in_proj.lora_E.default.weight shape torch.Size([8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.9.attention.self.in_proj.lora_A.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.9.attention.self.in_proj.lora_B.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.9.attention.self.in_proj.lora_E.default.weight shape torch.Size([8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.10.attention.self.in_proj.lora_A.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.10.attention.self.in_proj.lora_B.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.10.attention.self.in_proj.lora_E.default.weight shape torch.Size([8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.11.attention.self.in_proj.lora_A.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.11.attention.self.in_proj.lora_B.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.11.attention.self.in_proj.lora_E.default.weight shape torch.Size([8]) dtype torch.float32
+name base_model.model.classifier.modules_to_save.default.weight shape torch.Size([2, 768]) dtype torch.float32
+name base_model.model.classifier.modules_to_save.default.bias shape torch.Size([2]) dtype torch.float32
+Memory used after the specific part: 640.8984375 MB
+No label_names provided for model class `PeftModelForSequenceClassification`. Since `PeftModel` hides base models input arguments, if label_names is not given, label_names can't be set automatically within `Trainer`. Note that empty label_names list will be used instead.
+[34m[1mwandb[39m[22m: [33mWARNING[39m The `run_name` is currently set to the same value as `TrainingArguments.output_dir`. If this was not intended, please specify a different run name by setting the `TrainingArguments.run_name` parameter.
+  0%|                                                                                                                                                                                                                    | 0/21050 [00:00<?, ?it/s]Traceback (most recent call last):
+  File "/scratch/pawsey1001/haodongyang/loretta/bert_model/run_glue_v5.py", line 415, in <module>
+    main()
+  File "/scratch/pawsey1001/haodongyang/loretta/bert_model/run_glue_v5.py", line 355, in main
+    trainer.train()
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/transformers/trainer.py", line 2241, in train
+    return inner_training_loop(
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/transformers/trainer.py", line 2548, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/transformers/trainer.py", line 3698, in training_step
+    loss = self.compute_loss(model, inputs, num_items_in_batch=num_items_in_batch)
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/transformers/trainer.py", line 3759, in compute_loss
+    outputs = model(**inputs)
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/torch/nn/parallel/data_parallel.py", line 193, in forward
+    outputs = self.parallel_apply(replicas, inputs, module_kwargs)
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/torch/nn/parallel/data_parallel.py", line 212, in parallel_apply
+    return parallel_apply(
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/torch/nn/parallel/parallel_apply.py", line 126, in parallel_apply
+    output.reraise()
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/torch/_utils.py", line 733, in reraise
+    raise exception
+RuntimeError: Caught RuntimeError in replica 1 on device 1.
+Original Traceback (most recent call last):
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/torch/nn/parallel/parallel_apply.py", line 96, in _worker
+    output = module(*input, **kwargs)
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/scratch/pawsey1001/haodongyang/ViT-FT/peft/src/peft/peft_model.py", line 1558, in forward
+    return self.base_model(
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/scratch/pawsey1001/haodongyang/ViT-FT/peft/src/peft/tuners/tuners_utils.py", line 193, in forward
+    return self.model.forward(*args, **kwargs)
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/transformers/models/deberta/modeling_deberta.py", line 1103, in forward
+    outputs = self.deberta(
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/transformers/models/deberta/modeling_deberta.py", line 797, in forward
+    encoder_outputs = self.encoder(
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/transformers/models/deberta/modeling_deberta.py", line 608, in forward
+    hidden_states, att_m = layer_module(
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/transformers/models/deberta/modeling_deberta.py", line 525, in forward
+    attention_output, att_matrix = self.attention(
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/transformers/models/deberta/modeling_deberta.py", line 460, in forward
+    self_output, att_matrix = self.self(
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/transformers/models/deberta/modeling_deberta.py", line 258, in forward
+    qp = self.in_proj(hidden_states)  # .split(self.all_head_size, dim=-1)
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/scratch/pawsey1001/haodongyang/ViT-FT/peft/src/peft/tuners/lora/layer.py", line 771, in forward
+    self.lora_E[active_adapter].weight.data = self.S[self.indices[active_adapter]] # to.device(device)
+RuntimeError: indices should be either on cpu or on the same device as the indexed tensor (cuda:1)
+Traceback (most recent call last):
+  File "/scratch/pawsey1001/haodongyang/loretta/bert_model/run_glue_v5.py", line 415, in <module>
+    main()
+  File "/scratch/pawsey1001/haodongyang/loretta/bert_model/run_glue_v5.py", line 355, in main
+    trainer.train()
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/transformers/trainer.py", line 2241, in train
+    return inner_training_loop(
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/transformers/trainer.py", line 2548, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/transformers/trainer.py", line 3698, in training_step
+    loss = self.compute_loss(model, inputs, num_items_in_batch=num_items_in_batch)
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/transformers/trainer.py", line 3759, in compute_loss
+    outputs = model(**inputs)
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/torch/nn/parallel/data_parallel.py", line 193, in forward
+    outputs = self.parallel_apply(replicas, inputs, module_kwargs)
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/torch/nn/parallel/data_parallel.py", line 212, in parallel_apply
+    return parallel_apply(
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/torch/nn/parallel/parallel_apply.py", line 126, in parallel_apply
+    output.reraise()
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/torch/_utils.py", line 733, in reraise
+    raise exception
+RuntimeError: Caught RuntimeError in replica 1 on device 1.
+Original Traceback (most recent call last):
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/torch/nn/parallel/parallel_apply.py", line 96, in _worker
+    output = module(*input, **kwargs)
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/scratch/pawsey1001/haodongyang/ViT-FT/peft/src/peft/peft_model.py", line 1558, in forward
+    return self.base_model(
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/scratch/pawsey1001/haodongyang/ViT-FT/peft/src/peft/tuners/tuners_utils.py", line 193, in forward
+    return self.model.forward(*args, **kwargs)
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/transformers/models/deberta/modeling_deberta.py", line 1103, in forward
+    outputs = self.deberta(
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/transformers/models/deberta/modeling_deberta.py", line 797, in forward
+    encoder_outputs = self.encoder(
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/transformers/models/deberta/modeling_deberta.py", line 608, in forward
+    hidden_states, att_m = layer_module(
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/transformers/models/deberta/modeling_deberta.py", line 525, in forward
+    attention_output, att_matrix = self.attention(
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/transformers/models/deberta/modeling_deberta.py", line 460, in forward
+    self_output, att_matrix = self.self(
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/transformers/models/deberta/modeling_deberta.py", line 258, in forward
+    qp = self.in_proj(hidden_states)  # .split(self.all_head_size, dim=-1)
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/scratch/pawsey1001/haodongyang/ViT-FT/peft/src/peft/tuners/lora/layer.py", line 771, in forward
+    self.lora_E[active_adapter].weight.data = self.S[self.indices[active_adapter]] # to.device(device)
+RuntimeError: indices should be either on cpu or on the same device as the indexed tensor (cuda:1)

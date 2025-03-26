@@ -1,0 +1,250 @@
+2025-03-26 15:14:13,189 INFO    StreamThr :2392080 [internal.py:wandb_internal():86] W&B internal server running at pid: 2392080, started at: 2025-03-26 15:14:13.187602
+2025-03-26 15:14:13,190 DEBUG   HandlerThread:2392080 [handler.py:handle_request():146] handle_request: status
+2025-03-26 15:14:13,191 INFO    WriterThread:2392080 [datastore.py:open_for_write():87] open: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250326_151413-5ypmmeen/run-5ypmmeen.wandb
+2025-03-26 15:14:13,404 DEBUG   SenderThread:2392080 [sender.py:send():382] send: header
+2025-03-26 15:14:13,404 DEBUG   SenderThread:2392080 [sender.py:send():382] send: run
+2025-03-26 15:14:14,057 INFO    SenderThread:2392080 [dir_watcher.py:__init__():211] watching files in: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250326_151413-5ypmmeen/files
+2025-03-26 15:14:14,057 INFO    SenderThread:2392080 [sender.py:_start_run_threads():1136] run started: 5ypmmeen with start time 1742973253.187559
+2025-03-26 15:14:14,065 DEBUG   HandlerThread:2392080 [handler.py:handle_request():146] handle_request: check_version
+2025-03-26 15:14:14,065 DEBUG   SenderThread:2392080 [sender.py:send_request():409] send_request: check_version
+2025-03-26 15:14:14,119 DEBUG   HandlerThread:2392080 [handler.py:handle_request():146] handle_request: run_start
+2025-03-26 15:14:14,872 DEBUG   HandlerThread:2392080 [system_info.py:__init__():27] System info init
+2025-03-26 15:14:14,872 DEBUG   HandlerThread:2392080 [system_info.py:__init__():42] System info init done
+2025-03-26 15:14:14,872 INFO    HandlerThread:2392080 [system_monitor.py:start():194] Starting system monitor
+2025-03-26 15:14:14,873 INFO    SystemMonitor:2392080 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2025-03-26 15:14:14,873 INFO    HandlerThread:2392080 [system_monitor.py:probe():214] Collecting system info
+2025-03-26 15:14:14,873 INFO    SystemMonitor:2392080 [interfaces.py:start():190] Started cpu monitoring
+2025-03-26 15:14:14,874 INFO    SystemMonitor:2392080 [interfaces.py:start():190] Started disk monitoring
+2025-03-26 15:14:14,874 INFO    SystemMonitor:2392080 [interfaces.py:start():190] Started gpuamd monitoring
+2025-03-26 15:14:14,876 INFO    SystemMonitor:2392080 [interfaces.py:start():190] Started memory monitoring
+2025-03-26 15:14:14,876 INFO    SystemMonitor:2392080 [interfaces.py:start():190] Started network monitoring
+2025-03-26 15:14:15,653 WARNING gpuamd    :2392080 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-26 15:14:15,653 WARNING gpuamd    :2392080 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-26 15:14:15,653 WARNING gpuamd    :2392080 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-26 15:14:15,653 WARNING gpuamd    :2392080 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-26 15:14:15,653 WARNING gpuamd    :2392080 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-26 15:14:15,653 WARNING gpuamd    :2392080 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-26 15:14:15,696 DEBUG   HandlerThread:2392080 [system_info.py:probe():151] Probing system
+2025-03-26 15:14:15,698 DEBUG   HandlerThread:2392080 [system_info.py:_probe_git():136] Probing git
+2025-03-26 15:14:15,710 DEBUG   HandlerThread:2392080 [system_info.py:_probe_git():144] Probing git done
+2025-03-26 15:14:15,710 DEBUG   HandlerThread:2392080 [system_info.py:probe():199] Probing system done
+2025-03-26 15:14:15,711 DEBUG   HandlerThread:2392080 [system_monitor.py:probe():223] {'os': 'Linux-5.14.21-150500.55.83_13.0.62-cray_shasta_c-x86_64-with-glibc2.31', 'python': '3.10.13', 'heartbeatAt': '2025-03-26T07:14:15.696533', 'startedAt': '2025-03-26T07:14:13.174290', 'docker': None, 'cuda': None, 'args': ('--data_dir=default', '--logging_dir=/scratch/pawsey1001/haodongyang/loretta/bert_model/logs/SST2-8-1e-4-deberta-base-lora--20250326151359', '--model_name_or_path=microsoft/deberta-base', '--tokenizer_name=microsoft/deberta-base', '--evaluation_strategy=steps', '--eval_steps=500', '--logging_steps=50', '--overwrite_output_dir', '--save_steps=10000', '--task_name=SST2', '--warmup_step=500', '--learning_rate=1e-4', '--num_train_epochs=10', '--per_device_train_batch_size=8', '--output_dir=//software/projects/pawsey1001/haodongyang/micromamba/envs/bert/bin:/software/projects/pawsey1001/haodongyang/miniconda3/bin:/software/projects/pawsey1001/haodongyang/fakeHome/.vscode-server/cli/servers/Stable-ddc367ed5c8936efe395cffeec279b04ffd7db78/server/bin/remote-cli:/software/projects/pawsey1001/haodongyang/micromamba/condabin:/software/projects/pawsey1001/haodongyang/miniconda3/bin:/opt/cray/pe/mpich/8.1.27/ofi/gnu/9.1/bin:/opt/cray/pe/mpich/8.1.27/bin:/opt/cray/pe/craype/2.7.23/bin:/opt/cray/pe/gcc/12.2.0/snos/bin:/software/pawsey/tools/pawseytools/bin:/opt/cray/pe/perftools/23.09.0/bin:/opt/cray/pe/papi/7.0.1.1/bin:/opt/cray/libfabric/1.15.2.0/bin:/opt/clmgr/sbin:/opt/clmgr/bin:/opt/sgi/sbin:/opt/sgi/bin:/home/haodongyang/.local/bin:/home/haodongyang/bin:/usr/local/bin:/usr/bin:/bin:/sbin:/opt/cray/pe/bin', '--max_seq_length=128', '--tuning_type=lora', '--do_train', '--do_eval', '--tensor_rank=8'), 'state': 'running', 'program': '/scratch/pawsey1001/haodongyang/loretta/bert_model/run_glue_v5.py', 'codePathLocal': 'run_glue_v5.py', 'codePath': 'bert_model/run_glue_v5.py', 'git': {'remote': 'https://github.com/Haodong-Yang/loretta.git', 'commit': 'c66bbb3fe0a717d04dd02e4c5278bf2b61016348'}, 'email': None, 'root': '/scratch/pawsey1001/haodongyang/loretta', 'host': 'nid002870', 'username': 'haodongyang', 'executable': '/software/projects/pawsey1001/haodongyang/micromamba/envs/bert/bin/python', 'cpu_count': 64, 'cpu_count_logical': 128, 'cpu_freq': {'current': 2310.2226875, 'min': 1500.0, 'max': 2000.0}, 'cpu_freq_per_core': [{'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 3092.859, 'min': 1500.0, 'max': 2000.0}, {'current': 3093.631, 'min': 1500.0, 'max': 2000.0}, {'current': 3093.972, 'min': 1500.0, 'max': 2000.0}, {'current': 3093.657, 'min': 1500.0, 'max': 2000.0}, {'current': 3093.578, 'min': 1500.0, 'max': 2000.0}, {'current': 3092.755, 'min': 1500.0, 'max': 2000.0}, {'current': 3093.985, 'min': 1500.0, 'max': 2000.0}, {'current': 3093.817, 'min': 1500.0, 'max': 2000.0}, {'current': 3092.858, 'min': 1500.0, 'max': 2000.0}, {'current': 3093.824, 'min': 1500.0, 'max': 2000.0}, {'current': 3092.868, 'min': 1500.0, 'max': 2000.0}, {'current': 3094.032, 'min': 1500.0, 'max': 2000.0}, {'current': 3094.017, 'min': 1500.0, 'max': 2000.0}, {'current': 3092.452, 'min': 1500.0, 'max': 2000.0}, {'current': 3094.03, 'min': 1500.0, 'max': 2000.0}, {'current': 3092.847, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 3092.858, 'min': 1500.0, 'max': 2000.0}, {'current': 3092.863, 'min': 1500.0, 'max': 2000.0}, {'current': 3094.032, 'min': 1500.0, 'max': 2000.0}, {'current': 3092.867, 'min': 1500.0, 'max': 2000.0}, {'current': 3092.865, 'min': 1500.0, 'max': 2000.0}, {'current': 3093.443, 'min': 1500.0, 'max': 2000.0}, {'current': 3093.455, 'min': 1500.0, 'max': 2000.0}, {'current': 3092.864, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 3093.44, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 3094.027, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 3093.054, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 3094.025, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 3093.811, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 3094.012, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 3094.027, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 3092.871, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 3093.068, 'min': 1500.0, 'max': 2000.0}, {'current': 3091.84, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 3093.898, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 3093.644, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2000.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2969.046, 'min': 1500.0, 'max': 2000.0}], 'disk': {'/': {'total': 125.19184875488281, 'used': 0.40369415283203125}}, 'gpu_count': 5, 'gpu_devices': [{'id': '0x7408', 'unique_id': '0xb509654d28b411e6', 'vbios_version': '113-D65201-046', 'performance_level': 'auto', 'max_power': '560.0', 'series': 'AMD INSTINCT MI200 (MCM) OAM LC MBA HPE C2', 'model': '0x0b0c', 'vendor': 'Advanced Micro Devices, Inc. [AMD/ATI]', 'sku': 'D65201', 'sclk_range': '500Mhz - 1700Mhz', 'mclk_range': '400Mhz - 1600Mhz'}, {'id': '0x7408', 'unique_id': '0x4a0e8e08e07c03e0', 'vbios_version': '113-D65201-046', 'performance_level': 'auto', 'max_power': '0.0', 'series': 'AMD INSTINCT MI200 (MCM) OAM LC MBA HPE C2', 'model': '0x0b0c', 'vendor': 'Advanced Micro Devices, Inc. [AMD/ATI]', 'sku': 'D65201', 'sclk_range': '500Mhz - 1700Mhz', 'mclk_range': '400Mhz - 1600Mhz'}, {'id': '0x7408', 'unique_id': '0x4173ced4c7db11af', 'vbios_version': '113-D65201-046', 'performance_level': 'auto', 'max_power': '0.0', 'series': 'AMD INSTINCT MI200 (MCM) OAM LC MBA HPE C2', 'model': '0x0b0c', 'vendor': 'Advanced Micro Devices, Inc. [AMD/ATI]', 'sku': 'D65201', 'sclk_range': '500Mhz - 1700Mhz', 'mclk_range': '400Mhz - 1600Mhz'}, {'id': '0x7408', 'unique_id': '0x7ecb1fa0d2270a42', 'vbios_version': '113-D65201-046', 'performance_level': 'auto', 'max_power': '560.0', 'series': 'AMD INSTINCT MI200 (MCM) OAM LC MBA HPE C2', 'model': '0x0b0c', 'vendor': 'Advanced Micro Devices, Inc. [AMD/ATI]', 'sku': 'D65201', 'sclk_range': '500Mhz - 1700Mhz', 'mclk_range': '400Mhz - 1600Mhz'}, {'id': '0x7408', 'unique_id': '0xb4943abf30958744', 'vbios_version': '113-D65201-046', 'performance_level': 'auto', 'max_power': '0.0', 'series': 'AMD INSTINCT MI200 (MCM) OAM LC MBA HPE C2', 'model': '0x0b0c', 'vendor': 'Advanced Micro Devices, Inc. [AMD/ATI]', 'sku': 'D65201', 'sclk_range': '500Mhz - 1700Mhz', 'mclk_range': '400Mhz - 1600Mhz'}], 'memory': {'total': 250.3837013244629}}
+2025-03-26 15:14:15,711 INFO    HandlerThread:2392080 [system_monitor.py:probe():224] Finished collecting system info
+2025-03-26 15:14:15,711 INFO    HandlerThread:2392080 [system_monitor.py:probe():227] Publishing system info
+2025-03-26 15:14:15,711 DEBUG   HandlerThread:2392080 [system_info.py:_save_conda():208] Saving list of conda packages installed into the current environment
+2025-03-26 15:14:15,715 ERROR   HandlerThread:2392080 [system_info.py:_save_conda():219] Error saving conda packages: [Errno 2] No such file or directory: 'conda'
+Traceback (most recent call last):
+  File "/software/projects/pawsey1001/haodongyang/micromamba/envs/bert/lib/python3.10/site-packages/wandb/sdk/internal/system/system_info.py", line 215, in _save_conda
+    subprocess.call(
+  File "/software/projects/pawsey1001/haodongyang/micromamba/envs/bert/lib/python3.10/subprocess.py", line 345, in call
+    with Popen(*popenargs, **kwargs) as p:
+  File "/software/projects/pawsey1001/haodongyang/micromamba/envs/bert/lib/python3.10/subprocess.py", line 971, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/software/projects/pawsey1001/haodongyang/micromamba/envs/bert/lib/python3.10/subprocess.py", line 1863, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'conda'
+2025-03-26 15:14:15,715 DEBUG   HandlerThread:2392080 [system_info.py:_save_conda():220] Saving conda packages done
+2025-03-26 15:14:15,718 INFO    HandlerThread:2392080 [system_monitor.py:probe():229] Finished publishing system info
+2025-03-26 15:14:15,723 DEBUG   SenderThread:2392080 [sender.py:send():382] send: files
+2025-03-26 15:14:15,723 INFO    SenderThread:2392080 [sender.py:_save_file():1403] saving file wandb-metadata.json with policy now
+2025-03-26 15:14:15,728 DEBUG   HandlerThread:2392080 [handler.py:handle_request():146] handle_request: python_packages
+2025-03-26 15:14:15,728 DEBUG   SenderThread:2392080 [sender.py:send_request():409] send_request: python_packages
+2025-03-26 15:14:15,729 DEBUG   HandlerThread:2392080 [handler.py:handle_request():146] handle_request: stop_status
+2025-03-26 15:14:15,729 DEBUG   HandlerThread:2392080 [handler.py:handle_request():146] handle_request: internal_messages
+2025-03-26 15:14:15,730 DEBUG   SenderThread:2392080 [sender.py:send_request():409] send_request: stop_status
+2025-03-26 15:14:16,060 INFO    Thread-12 :2392080 [dir_watcher.py:_on_file_created():271] file/dir created: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250326_151413-5ypmmeen/files/wandb-metadata.json
+2025-03-26 15:14:16,060 INFO    Thread-12 :2392080 [dir_watcher.py:_on_file_created():271] file/dir created: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250326_151413-5ypmmeen/files/requirements.txt
+2025-03-26 15:14:16,061 INFO    Thread-12 :2392080 [dir_watcher.py:_on_file_created():271] file/dir created: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250326_151413-5ypmmeen/files/conda-environment.yaml
+2025-03-26 15:14:16,207 DEBUG   SenderThread:2392080 [sender.py:send():382] send: telemetry
+2025-03-26 15:14:16,933 DEBUG   HandlerThread:2392080 [handler.py:handle_request():146] handle_request: partial_history
+2025-03-26 15:14:16,935 DEBUG   SenderThread:2392080 [sender.py:send():382] send: history
+2025-03-26 15:14:16,935 DEBUG   SenderThread:2392080 [sender.py:send_request():409] send_request: summary_record
+2025-03-26 15:14:16,938 INFO    SenderThread:2392080 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-26 15:14:17,061 INFO    Thread-12 :2392080 [dir_watcher.py:_on_file_created():271] file/dir created: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250326_151413-5ypmmeen/files/wandb-summary.json
+2025-03-26 15:14:17,061 INFO    Thread-12 :2392080 [dir_watcher.py:_on_file_created():271] file/dir created: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250326_151413-5ypmmeen/files/output.log
+2025-03-26 15:14:17,364 INFO    wandb-upload_0:2392080 [upload_job.py:push():131] Uploaded file /tmp/tmpdgmdk6llwandb/elrqv8cq-wandb-metadata.json
+2025-03-26 15:14:18,407 WARNING gpuamd    :2392080 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-26 15:14:18,407 WARNING gpuamd    :2392080 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-26 15:14:18,407 WARNING gpuamd    :2392080 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-26 15:14:18,407 WARNING gpuamd    :2392080 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-26 15:14:18,408 WARNING gpuamd    :2392080 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-26 15:14:18,408 WARNING gpuamd    :2392080 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-26 15:14:18,938 DEBUG   HandlerThread:2392080 [handler.py:handle_request():146] handle_request: status_report
+2025-03-26 15:14:19,062 INFO    Thread-12 :2392080 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250326_151413-5ypmmeen/files/output.log
+2025-03-26 15:14:21,158 WARNING gpuamd    :2392080 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-26 15:14:21,158 WARNING gpuamd    :2392080 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-26 15:14:21,158 WARNING gpuamd    :2392080 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-26 15:14:21,158 WARNING gpuamd    :2392080 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-26 15:14:21,158 WARNING gpuamd    :2392080 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-26 15:14:21,158 WARNING gpuamd    :2392080 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-26 15:14:23,907 WARNING gpuamd    :2392080 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-26 15:14:23,908 WARNING gpuamd    :2392080 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-26 15:14:23,908 WARNING gpuamd    :2392080 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-26 15:14:23,908 WARNING gpuamd    :2392080 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-26 15:14:23,908 WARNING gpuamd    :2392080 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-26 15:14:23,908 WARNING gpuamd    :2392080 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-26 15:14:23,939 DEBUG   HandlerThread:2392080 [handler.py:handle_request():146] handle_request: status_report
+2025-03-26 15:14:26,668 WARNING gpuamd    :2392080 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-26 15:14:26,668 WARNING gpuamd    :2392080 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-26 15:14:26,668 WARNING gpuamd    :2392080 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-26 15:14:26,668 WARNING gpuamd    :2392080 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-26 15:14:26,668 WARNING gpuamd    :2392080 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-26 15:14:26,668 WARNING gpuamd    :2392080 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-26 15:14:28,940 DEBUG   HandlerThread:2392080 [handler.py:handle_request():146] handle_request: status_report
+2025-03-26 15:14:29,500 WARNING gpuamd    :2392080 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-26 15:14:29,500 WARNING gpuamd    :2392080 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-26 15:14:29,500 WARNING gpuamd    :2392080 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-26 15:14:29,500 WARNING gpuamd    :2392080 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-26 15:14:29,500 WARNING gpuamd    :2392080 [gpu_amd.py:parse_stats():83] Could not parse GPU power as float
+2025-03-26 15:14:29,500 WARNING gpuamd    :2392080 [gpu_amd.py:parse_stats():91] Could not parse GPU average/max power as float
+2025-03-26 15:14:30,210 DEBUG   SenderThread:2392080 [sender.py:send():382] send: exit
+2025-03-26 15:14:30,210 INFO    SenderThread:2392080 [sender.py:send_exit():589] handling exit code: 1
+2025-03-26 15:14:30,210 INFO    SenderThread:2392080 [sender.py:send_exit():591] handling runtime: 16
+2025-03-26 15:14:30,211 INFO    SenderThread:2392080 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-26 15:14:30,212 INFO    SenderThread:2392080 [sender.py:send_exit():597] send defer
+2025-03-26 15:14:30,212 DEBUG   HandlerThread:2392080 [handler.py:handle_request():146] handle_request: defer
+2025-03-26 15:14:30,212 INFO    HandlerThread:2392080 [handler.py:handle_request_defer():172] handle defer: 0
+2025-03-26 15:14:30,212 DEBUG   SenderThread:2392080 [sender.py:send_request():409] send_request: defer
+2025-03-26 15:14:30,212 INFO    SenderThread:2392080 [sender.py:send_request_defer():613] handle sender defer: 0
+2025-03-26 15:14:30,212 INFO    SenderThread:2392080 [sender.py:transition_state():617] send defer: 1
+2025-03-26 15:14:30,212 DEBUG   HandlerThread:2392080 [handler.py:handle_request():146] handle_request: defer
+2025-03-26 15:14:30,212 INFO    HandlerThread:2392080 [handler.py:handle_request_defer():172] handle defer: 1
+2025-03-26 15:14:30,212 DEBUG   SenderThread:2392080 [sender.py:send_request():409] send_request: defer
+2025-03-26 15:14:30,212 INFO    SenderThread:2392080 [sender.py:send_request_defer():613] handle sender defer: 1
+2025-03-26 15:14:30,213 INFO    SenderThread:2392080 [sender.py:transition_state():617] send defer: 2
+2025-03-26 15:14:30,213 DEBUG   HandlerThread:2392080 [handler.py:handle_request():146] handle_request: defer
+2025-03-26 15:14:30,213 INFO    HandlerThread:2392080 [handler.py:handle_request_defer():172] handle defer: 2
+2025-03-26 15:14:30,213 INFO    HandlerThread:2392080 [system_monitor.py:finish():203] Stopping system monitor
+2025-03-26 15:14:30,213 INFO    HandlerThread:2392080 [interfaces.py:finish():202] Joined cpu monitor
+2025-03-26 15:14:30,213 DEBUG   SystemMonitor:2392080 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2025-03-26 15:14:30,214 INFO    HandlerThread:2392080 [interfaces.py:finish():202] Joined disk monitor
+2025-03-26 15:14:30,214 DEBUG   SystemMonitor:2392080 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2025-03-26 15:14:30,214 INFO    HandlerThread:2392080 [interfaces.py:finish():202] Joined gpuamd monitor
+2025-03-26 15:14:30,214 DEBUG   SystemMonitor:2392080 [system_monitor.py:_start():183] Publishing last batch of metrics
+2025-03-26 15:14:30,214 INFO    HandlerThread:2392080 [interfaces.py:finish():202] Joined memory monitor
+2025-03-26 15:14:30,216 INFO    HandlerThread:2392080 [interfaces.py:finish():202] Joined network monitor
+2025-03-26 15:14:30,216 DEBUG   SenderThread:2392080 [sender.py:send_request():409] send_request: defer
+2025-03-26 15:14:30,216 INFO    SenderThread:2392080 [sender.py:send_request_defer():613] handle sender defer: 2
+2025-03-26 15:14:30,216 INFO    SenderThread:2392080 [sender.py:transition_state():617] send defer: 3
+2025-03-26 15:14:30,216 DEBUG   SenderThread:2392080 [sender.py:send():382] send: telemetry
+2025-03-26 15:14:30,216 DEBUG   HandlerThread:2392080 [handler.py:handle_request():146] handle_request: defer
+2025-03-26 15:14:30,217 DEBUG   SenderThread:2392080 [sender.py:send():382] send: stats
+2025-03-26 15:14:30,217 INFO    HandlerThread:2392080 [handler.py:handle_request_defer():172] handle defer: 3
+2025-03-26 15:14:30,217 DEBUG   SenderThread:2392080 [sender.py:send_request():409] send_request: defer
+2025-03-26 15:14:30,217 INFO    SenderThread:2392080 [sender.py:send_request_defer():613] handle sender defer: 3
+2025-03-26 15:14:30,218 INFO    SenderThread:2392080 [sender.py:transition_state():617] send defer: 4
+2025-03-26 15:14:30,218 DEBUG   HandlerThread:2392080 [handler.py:handle_request():146] handle_request: defer
+2025-03-26 15:14:30,218 INFO    HandlerThread:2392080 [handler.py:handle_request_defer():172] handle defer: 4
+2025-03-26 15:14:30,218 DEBUG   SenderThread:2392080 [sender.py:send_request():409] send_request: defer
+2025-03-26 15:14:30,218 INFO    SenderThread:2392080 [sender.py:send_request_defer():613] handle sender defer: 4
+2025-03-26 15:14:30,218 INFO    SenderThread:2392080 [sender.py:transition_state():617] send defer: 5
+2025-03-26 15:14:30,218 DEBUG   HandlerThread:2392080 [handler.py:handle_request():146] handle_request: defer
+2025-03-26 15:14:30,218 INFO    HandlerThread:2392080 [handler.py:handle_request_defer():172] handle defer: 5
+2025-03-26 15:14:30,218 DEBUG   SenderThread:2392080 [sender.py:send():382] send: summary
+2025-03-26 15:14:30,220 INFO    SenderThread:2392080 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-26 15:14:30,220 DEBUG   SenderThread:2392080 [sender.py:send_request():409] send_request: defer
+2025-03-26 15:14:30,220 INFO    SenderThread:2392080 [sender.py:send_request_defer():613] handle sender defer: 5
+2025-03-26 15:14:30,220 INFO    SenderThread:2392080 [sender.py:transition_state():617] send defer: 6
+2025-03-26 15:14:30,220 DEBUG   HandlerThread:2392080 [handler.py:handle_request():146] handle_request: defer
+2025-03-26 15:14:30,220 INFO    HandlerThread:2392080 [handler.py:handle_request_defer():172] handle defer: 6
+2025-03-26 15:14:30,221 DEBUG   SenderThread:2392080 [sender.py:send_request():409] send_request: defer
+2025-03-26 15:14:30,221 INFO    SenderThread:2392080 [sender.py:send_request_defer():613] handle sender defer: 6
+2025-03-26 15:14:30,223 DEBUG   HandlerThread:2392080 [handler.py:handle_request():146] handle_request: status_report
+2025-03-26 15:14:30,515 INFO    SenderThread:2392080 [sender.py:transition_state():617] send defer: 7
+2025-03-26 15:14:30,515 DEBUG   HandlerThread:2392080 [handler.py:handle_request():146] handle_request: defer
+2025-03-26 15:14:30,515 INFO    HandlerThread:2392080 [handler.py:handle_request_defer():172] handle defer: 7
+2025-03-26 15:14:30,516 DEBUG   SenderThread:2392080 [sender.py:send_request():409] send_request: defer
+2025-03-26 15:14:30,516 INFO    SenderThread:2392080 [sender.py:send_request_defer():613] handle sender defer: 7
+2025-03-26 15:14:31,067 INFO    Thread-12 :2392080 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250326_151413-5ypmmeen/files/wandb-summary.json
+2025-03-26 15:14:31,068 INFO    Thread-12 :2392080 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250326_151413-5ypmmeen/files/config.yaml
+2025-03-26 15:14:31,068 INFO    Thread-12 :2392080 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250326_151413-5ypmmeen/files/output.log
+2025-03-26 15:14:31,210 DEBUG   HandlerThread:2392080 [handler.py:handle_request():146] handle_request: poll_exit
+2025-03-26 15:14:32,912 INFO    SenderThread:2392080 [sender.py:transition_state():617] send defer: 8
+2025-03-26 15:14:32,912 DEBUG   SenderThread:2392080 [sender.py:send_request():409] send_request: poll_exit
+2025-03-26 15:14:32,912 DEBUG   HandlerThread:2392080 [handler.py:handle_request():146] handle_request: defer
+2025-03-26 15:14:32,912 INFO    HandlerThread:2392080 [handler.py:handle_request_defer():172] handle defer: 8
+2025-03-26 15:14:32,913 DEBUG   SenderThread:2392080 [sender.py:send_request():409] send_request: defer
+2025-03-26 15:14:32,913 INFO    SenderThread:2392080 [sender.py:send_request_defer():613] handle sender defer: 8
+2025-03-26 15:14:32,913 INFO    SenderThread:2392080 [job_builder.py:build():296] Attempting to build job artifact
+2025-03-26 15:14:32,913 INFO    SenderThread:2392080 [job_builder.py:_get_source_type():426] is repo sourced job
+2025-03-26 15:14:32,934 INFO    SenderThread:2392080 [job_builder.py:build():402] adding wandb-job metadata file
+2025-03-26 15:14:32,943 INFO    SenderThread:2392080 [sender.py:transition_state():617] send defer: 9
+2025-03-26 15:14:32,944 DEBUG   HandlerThread:2392080 [handler.py:handle_request():146] handle_request: defer
+2025-03-26 15:14:32,944 DEBUG   SenderThread:2392080 [sender.py:send():382] send: artifact
+2025-03-26 15:14:32,944 INFO    HandlerThread:2392080 [handler.py:handle_request_defer():172] handle defer: 9
+2025-03-26 15:14:33,068 INFO    Thread-12 :2392080 [dir_watcher.py:_on_file_modified():288] file/dir modified: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250326_151413-5ypmmeen/files/output.log
+2025-03-26 15:14:33,210 DEBUG   HandlerThread:2392080 [handler.py:handle_request():146] handle_request: poll_exit
+2025-03-26 15:14:34,719 INFO    wandb-upload_1:2392080 [upload_job.py:push():86] Skipped uploading /scratch/pawsey1001/haodongyang/.local/share/wandb/artifacts/staging/tmpyo15a2le
+2025-03-26 15:14:35,233 INFO    wandb-upload_0:2392080 [upload_job.py:push():89] Uploaded file /scratch/pawsey1001/haodongyang/.local/share/wandb/artifacts/staging/tmp2jate386
+2025-03-26 15:14:37,024 INFO    SenderThread:2392080 [sender.py:send_artifact():1494] sent artifact job-https___github.com_Haodong-Yang_loretta.git_bert_model_run_glue_v5.py - {'id': 'QXJ0aWZhY3Q6MTU5ODUzMjgzOQ==', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjU4OTE2OTE4NQ==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTU5ODQ5OTg5MQ==', 'versionIndex': 4}}}
+2025-03-26 15:14:37,025 DEBUG   SenderThread:2392080 [sender.py:send_request():409] send_request: defer
+2025-03-26 15:14:37,025 DEBUG   HandlerThread:2392080 [handler.py:handle_request():146] handle_request: status_report
+2025-03-26 15:14:37,025 INFO    SenderThread:2392080 [sender.py:send_request_defer():613] handle sender defer: 9
+2025-03-26 15:14:37,025 INFO    SenderThread:2392080 [dir_watcher.py:finish():358] shutting down directory watcher
+2025-03-26 15:14:37,070 INFO    SenderThread:2392080 [dir_watcher.py:finish():388] scan: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250326_151413-5ypmmeen/files
+2025-03-26 15:14:37,070 INFO    SenderThread:2392080 [dir_watcher.py:finish():402] scan save: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250326_151413-5ypmmeen/files/conda-environment.yaml conda-environment.yaml
+2025-03-26 15:14:37,070 INFO    SenderThread:2392080 [dir_watcher.py:finish():402] scan save: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250326_151413-5ypmmeen/files/wandb-summary.json wandb-summary.json
+2025-03-26 15:14:37,070 INFO    SenderThread:2392080 [dir_watcher.py:finish():402] scan save: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250326_151413-5ypmmeen/files/requirements.txt requirements.txt
+2025-03-26 15:14:37,073 INFO    SenderThread:2392080 [dir_watcher.py:finish():402] scan save: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250326_151413-5ypmmeen/files/wandb-metadata.json wandb-metadata.json
+2025-03-26 15:14:37,073 INFO    SenderThread:2392080 [dir_watcher.py:finish():402] scan save: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250326_151413-5ypmmeen/files/output.log output.log
+2025-03-26 15:14:37,074 INFO    SenderThread:2392080 [dir_watcher.py:finish():402] scan save: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250326_151413-5ypmmeen/files/config.yaml config.yaml
+2025-03-26 15:14:37,075 INFO    SenderThread:2392080 [sender.py:transition_state():617] send defer: 10
+2025-03-26 15:14:37,077 DEBUG   SenderThread:2392080 [sender.py:send_request():409] send_request: poll_exit
+2025-03-26 15:14:37,077 DEBUG   HandlerThread:2392080 [handler.py:handle_request():146] handle_request: defer
+2025-03-26 15:14:37,077 INFO    HandlerThread:2392080 [handler.py:handle_request_defer():172] handle defer: 10
+2025-03-26 15:14:37,079 DEBUG   SenderThread:2392080 [sender.py:send_request():409] send_request: defer
+2025-03-26 15:14:37,079 INFO    SenderThread:2392080 [sender.py:send_request_defer():613] handle sender defer: 10
+2025-03-26 15:14:37,080 INFO    SenderThread:2392080 [file_pusher.py:finish():175] shutting down file pusher
+2025-03-26 15:14:37,212 DEBUG   HandlerThread:2392080 [handler.py:handle_request():146] handle_request: poll_exit
+2025-03-26 15:14:37,212 DEBUG   SenderThread:2392080 [sender.py:send_request():409] send_request: poll_exit
+2025-03-26 15:14:37,630 INFO    wandb-upload_1:2392080 [upload_job.py:push():131] Uploaded file /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250326_151413-5ypmmeen/files/wandb-summary.json
+2025-03-26 15:14:37,911 INFO    wandb-upload_0:2392080 [upload_job.py:push():131] Uploaded file /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250326_151413-5ypmmeen/files/requirements.txt
+2025-03-26 15:14:38,015 INFO    wandb-upload_2:2392080 [upload_job.py:push():131] Uploaded file /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250326_151413-5ypmmeen/files/output.log
+2025-03-26 15:14:38,049 INFO    wandb-upload_3:2392080 [upload_job.py:push():131] Uploaded file /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250326_151413-5ypmmeen/files/config.yaml
+2025-03-26 15:14:38,213 DEBUG   HandlerThread:2392080 [handler.py:handle_request():146] handle_request: poll_exit
+2025-03-26 15:14:38,213 DEBUG   SenderThread:2392080 [sender.py:send_request():409] send_request: poll_exit
+2025-03-26 15:14:38,249 INFO    Thread-11 (_thread_body):2392080 [sender.py:transition_state():617] send defer: 11
+2025-03-26 15:14:38,249 DEBUG   HandlerThread:2392080 [handler.py:handle_request():146] handle_request: defer
+2025-03-26 15:14:38,249 INFO    HandlerThread:2392080 [handler.py:handle_request_defer():172] handle defer: 11
+2025-03-26 15:14:38,250 DEBUG   SenderThread:2392080 [sender.py:send_request():409] send_request: defer
+2025-03-26 15:14:38,250 INFO    SenderThread:2392080 [sender.py:send_request_defer():613] handle sender defer: 11
+2025-03-26 15:14:38,250 INFO    SenderThread:2392080 [file_pusher.py:join():181] waiting for file pusher
+2025-03-26 15:14:38,250 INFO    SenderThread:2392080 [sender.py:transition_state():617] send defer: 12
+2025-03-26 15:14:38,250 DEBUG   HandlerThread:2392080 [handler.py:handle_request():146] handle_request: defer
+2025-03-26 15:14:38,250 INFO    HandlerThread:2392080 [handler.py:handle_request_defer():172] handle defer: 12
+2025-03-26 15:14:38,250 DEBUG   SenderThread:2392080 [sender.py:send_request():409] send_request: defer
+2025-03-26 15:14:38,250 INFO    SenderThread:2392080 [sender.py:send_request_defer():613] handle sender defer: 12
+2025-03-26 15:14:38,251 INFO    SenderThread:2392080 [file_stream.py:finish():595] file stream finish called
+2025-03-26 15:14:38,519 INFO    SenderThread:2392080 [file_stream.py:finish():599] file stream finish is done
+2025-03-26 15:14:38,519 INFO    SenderThread:2392080 [sender.py:transition_state():617] send defer: 13
+2025-03-26 15:14:38,519 DEBUG   HandlerThread:2392080 [handler.py:handle_request():146] handle_request: defer
+2025-03-26 15:14:38,519 INFO    HandlerThread:2392080 [handler.py:handle_request_defer():172] handle defer: 13
+2025-03-26 15:14:38,519 DEBUG   SenderThread:2392080 [sender.py:send_request():409] send_request: defer
+2025-03-26 15:14:38,519 INFO    SenderThread:2392080 [sender.py:send_request_defer():613] handle sender defer: 13
+2025-03-26 15:14:38,520 INFO    SenderThread:2392080 [sender.py:transition_state():617] send defer: 14
+2025-03-26 15:14:38,520 DEBUG   HandlerThread:2392080 [handler.py:handle_request():146] handle_request: defer
+2025-03-26 15:14:38,520 DEBUG   SenderThread:2392080 [sender.py:send():382] send: final
+2025-03-26 15:14:38,520 INFO    HandlerThread:2392080 [handler.py:handle_request_defer():172] handle defer: 14
+2025-03-26 15:14:38,520 DEBUG   SenderThread:2392080 [sender.py:send():382] send: footer
+2025-03-26 15:14:38,520 DEBUG   SenderThread:2392080 [sender.py:send_request():409] send_request: defer
+2025-03-26 15:14:38,520 INFO    SenderThread:2392080 [sender.py:send_request_defer():613] handle sender defer: 14
+2025-03-26 15:14:38,521 DEBUG   HandlerThread:2392080 [handler.py:handle_request():146] handle_request: poll_exit
+2025-03-26 15:14:38,521 DEBUG   SenderThread:2392080 [sender.py:send_request():409] send_request: poll_exit
+2025-03-26 15:14:38,521 DEBUG   HandlerThread:2392080 [handler.py:handle_request():146] handle_request: poll_exit
+2025-03-26 15:14:38,522 DEBUG   SenderThread:2392080 [sender.py:send_request():409] send_request: poll_exit
+2025-03-26 15:14:38,522 DEBUG   HandlerThread:2392080 [handler.py:handle_request():146] handle_request: server_info
+2025-03-26 15:14:38,522 DEBUG   HandlerThread:2392080 [handler.py:handle_request():146] handle_request: get_summary
+2025-03-26 15:14:38,522 DEBUG   HandlerThread:2392080 [handler.py:handle_request():146] handle_request: sampled_history
+2025-03-26 15:14:38,523 DEBUG   HandlerThread:2392080 [handler.py:handle_request():146] handle_request: internal_messages
+2025-03-26 15:14:38,523 DEBUG   SenderThread:2392080 [sender.py:send_request():409] send_request: server_info
+2025-03-26 15:14:38,525 DEBUG   HandlerThread:2392080 [handler.py:handle_request():146] handle_request: job_info
+2025-03-26 15:14:38,751 DEBUG   SenderThread:2392080 [sender.py:send_request():409] send_request: job_info
+2025-03-26 15:14:38,752 INFO    MainThread:2392080 [wandb_run.py:_footer_history_summary_info():3857] rendering history
+2025-03-26 15:14:38,752 INFO    MainThread:2392080 [wandb_run.py:_footer_history_summary_info():3889] rendering summary
+2025-03-26 15:14:38,752 INFO    MainThread:2392080 [wandb_run.py:_footer_sync_info():3816] logging synced files
+2025-03-26 15:14:38,752 DEBUG   HandlerThread:2392080 [handler.py:handle_request():146] handle_request: shutdown
+2025-03-26 15:14:38,752 INFO    HandlerThread:2392080 [handler.py:finish():869] shutting down handler
+2025-03-26 15:14:39,525 INFO    WriterThread:2392080 [datastore.py:close():296] close: /scratch/pawsey1001/haodongyang/loretta/bert_model/wandb/run-20250326_151413-5ypmmeen/run-5ypmmeen.wandb
+2025-03-26 15:14:39,752 INFO    SenderThread:2392080 [sender.py:finish():1572] shutting down sender
+2025-03-26 15:14:39,752 INFO    SenderThread:2392080 [file_pusher.py:finish():175] shutting down file pusher
+2025-03-26 15:14:39,752 INFO    SenderThread:2392080 [file_pusher.py:join():181] waiting for file pusher

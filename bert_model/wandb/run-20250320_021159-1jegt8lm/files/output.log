@@ -1,0 +1,154 @@
+Some weights of DebertaForSequenceClassification were not initialized from the model checkpoint at microsoft/deberta-base and are newly initialized: ['classifier.bias', 'classifier.weight', 'pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+name base_model.model.deberta.encoder.layer.0.attention.self.in_proj.lora_A.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.0.attention.self.in_proj.lora_B.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.0.attention.self.in_proj.lora_E.default.weight shape torch.Size([8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.1.attention.self.in_proj.lora_A.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.1.attention.self.in_proj.lora_B.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.1.attention.self.in_proj.lora_E.default.weight shape torch.Size([8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.2.attention.self.in_proj.lora_A.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.2.attention.self.in_proj.lora_B.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.2.attention.self.in_proj.lora_E.default.weight shape torch.Size([8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.3.attention.self.in_proj.lora_A.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.3.attention.self.in_proj.lora_B.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.3.attention.self.in_proj.lora_E.default.weight shape torch.Size([8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.4.attention.self.in_proj.lora_A.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.4.attention.self.in_proj.lora_B.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.4.attention.self.in_proj.lora_E.default.weight shape torch.Size([8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.5.attention.self.in_proj.lora_A.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.5.attention.self.in_proj.lora_B.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.5.attention.self.in_proj.lora_E.default.weight shape torch.Size([8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.6.attention.self.in_proj.lora_A.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.6.attention.self.in_proj.lora_B.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.6.attention.self.in_proj.lora_E.default.weight shape torch.Size([8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.7.attention.self.in_proj.lora_A.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.7.attention.self.in_proj.lora_B.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.7.attention.self.in_proj.lora_E.default.weight shape torch.Size([8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.8.attention.self.in_proj.lora_A.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.8.attention.self.in_proj.lora_B.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.8.attention.self.in_proj.lora_E.default.weight shape torch.Size([8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.9.attention.self.in_proj.lora_A.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.9.attention.self.in_proj.lora_B.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.9.attention.self.in_proj.lora_E.default.weight shape torch.Size([8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.10.attention.self.in_proj.lora_A.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.10.attention.self.in_proj.lora_B.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.10.attention.self.in_proj.lora_E.default.weight shape torch.Size([8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.11.attention.self.in_proj.lora_A.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.11.attention.self.in_proj.lora_B.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.11.attention.self.in_proj.lora_E.default.weight shape torch.Size([8]) dtype torch.float32
+name base_model.model.classifier.modules_to_save.default.weight shape torch.Size([2, 768]) dtype torch.float32
+name base_model.model.classifier.modules_to_save.default.bias shape torch.Size([2]) dtype torch.float32
+Memory used after the specific part: 0.0 MB
+Map: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1821/1821 [00:00<00:00, 13875.20 examples/s]
+No label_names provided for model class `PeftModelForSequenceClassification`. Since `PeftModel` hides base models input arguments, if label_names is not given, label_names can't be set automatically within `Trainer`. Note that empty label_names list will be used instead.
+[34m[1mwandb[39m[22m: [33mWARNING[39m The `run_name` is currently set to the same value as `TrainingArguments.output_dir`. If this was not intended, please specify a different run name by setting the `TrainingArguments.run_name` parameter.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  0%|                                                                                                                                                                                                        | 48/84190 [00:31<15:06:58,  1.55it/s]
+
+
+
+
+
+
+
+
+
+
+  0%|▏                                                                                                                                                                                                      | 100/84190 [01:04<15:08:58,  1.54it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  0%|▎                                                                                                                                                                                                      | 147/84190 [01:35<14:54:04,  1.57it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  0%|▍                                                                                                                                                                                                      | 198/84190 [02:07<14:50:28,  1.57it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  0%|▌                                                                                                                                                                                                      | 248/84190 [02:39<14:53:34,  1.57it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  0%|▋                                                                                                                                                                                                      | 297/84190 [03:11<15:08:31,  1.54it/s]
+
+
+  0%|▋                                                                                                                                                                                                      | 303/84190 [03:15<15:00:11,  1.55it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+

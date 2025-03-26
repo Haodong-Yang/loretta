@@ -1,0 +1,769 @@
+{
+    "os": "Linux-5.14.21-150500.55.83_13.0.62-cray_shasta_c-x86_64-with-glibc2.31",
+    "python": "3.10.13",
+    "heartbeatAt": "2025-03-26T07:22:11.210149",
+    "startedAt": "2025-03-26T07:22:09.240031",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--data_dir=default",
+        "--logging_dir=/scratch/pawsey1001/haodongyang/loretta/bert_model/logs/SST2-8-1e-4-deberta-base-lora--20250326152158",
+        "--model_name_or_path=microsoft/deberta-base",
+        "--tokenizer_name=microsoft/deberta-base",
+        "--evaluation_strategy=steps",
+        "--eval_steps=500",
+        "--logging_steps=50",
+        "--overwrite_output_dir",
+        "--save_steps=10000",
+        "--task_name=SST2",
+        "--warmup_step=500",
+        "--learning_rate=1e-4",
+        "--num_train_epochs=10",
+        "--per_device_train_batch_size=8",
+        "--output_dir=//software/projects/pawsey1001/haodongyang/micromamba/envs/bert/bin:/software/projects/pawsey1001/haodongyang/miniconda3/bin:/software/projects/pawsey1001/haodongyang/fakeHome/.vscode-server/cli/servers/Stable-ddc367ed5c8936efe395cffeec279b04ffd7db78/server/bin/remote-cli:/software/projects/pawsey1001/haodongyang/micromamba/condabin:/software/projects/pawsey1001/haodongyang/miniconda3/bin:/opt/cray/pe/mpich/8.1.27/ofi/gnu/9.1/bin:/opt/cray/pe/mpich/8.1.27/bin:/opt/cray/pe/craype/2.7.23/bin:/opt/cray/pe/gcc/12.2.0/snos/bin:/software/pawsey/tools/pawseytools/bin:/opt/cray/pe/perftools/23.09.0/bin:/opt/cray/pe/papi/7.0.1.1/bin:/opt/cray/libfabric/1.15.2.0/bin:/opt/clmgr/sbin:/opt/clmgr/bin:/opt/sgi/sbin:/opt/sgi/bin:/home/haodongyang/.local/bin:/home/haodongyang/bin:/usr/local/bin:/usr/bin:/bin:/sbin:/opt/cray/pe/bin",
+        "--max_seq_length=128",
+        "--tuning_type=lora",
+        "--do_train",
+        "--do_eval",
+        "--tensor_rank=8"
+    ],
+    "state": "running",
+    "program": "/scratch/pawsey1001/haodongyang/loretta/bert_model/run_glue_v5.py",
+    "codePathLocal": "run_glue_v5.py",
+    "codePath": "bert_model/run_glue_v5.py",
+    "git": {
+        "remote": "https://github.com/Haodong-Yang/loretta.git",
+        "commit": "c66bbb3fe0a717d04dd02e4c5278bf2b61016348"
+    },
+    "email": null,
+    "root": "/scratch/pawsey1001/haodongyang/loretta",
+    "host": "nid002870",
+    "username": "haodongyang",
+    "executable": "/software/projects/pawsey1001/haodongyang/micromamba/envs/bert/bin/python",
+    "cpu_count": 64,
+    "cpu_count_logical": 128,
+    "cpu_freq": {
+        "current": 2065.4478359375003,
+        "min": 1500.0,
+        "max": 2000.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 3093.097,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 3079.483,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 3071.474,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 3092.621,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 3093.096,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 3091.574,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 3092.834,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2943.947,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2000.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 125.19184875488281,
+            "used": 0.4035987854003906
+        }
+    },
+    "gpu_count": 5,
+    "gpu_devices": [
+        {
+            "id": "0x7408",
+            "unique_id": "0xb509654d28b411e6",
+            "vbios_version": "113-D65201-046",
+            "performance_level": "auto",
+            "max_power": "560.0",
+            "series": "AMD INSTINCT MI200 (MCM) OAM LC MBA HPE C2",
+            "model": "0x0b0c",
+            "vendor": "Advanced Micro Devices, Inc. [AMD/ATI]",
+            "sku": "D65201",
+            "sclk_range": "500Mhz - 1700Mhz",
+            "mclk_range": "400Mhz - 1600Mhz"
+        },
+        {
+            "id": "0x7408",
+            "unique_id": "0x4a0e8e08e07c03e0",
+            "vbios_version": "113-D65201-046",
+            "performance_level": "auto",
+            "max_power": "0.0",
+            "series": "AMD INSTINCT MI200 (MCM) OAM LC MBA HPE C2",
+            "model": "0x0b0c",
+            "vendor": "Advanced Micro Devices, Inc. [AMD/ATI]",
+            "sku": "D65201",
+            "sclk_range": "500Mhz - 1700Mhz",
+            "mclk_range": "400Mhz - 1600Mhz"
+        },
+        {
+            "id": "0x7408",
+            "unique_id": "0x4173ced4c7db11af",
+            "vbios_version": "113-D65201-046",
+            "performance_level": "auto",
+            "max_power": "0.0",
+            "series": "AMD INSTINCT MI200 (MCM) OAM LC MBA HPE C2",
+            "model": "0x0b0c",
+            "vendor": "Advanced Micro Devices, Inc. [AMD/ATI]",
+            "sku": "D65201",
+            "sclk_range": "500Mhz - 1700Mhz",
+            "mclk_range": "400Mhz - 1600Mhz"
+        },
+        {
+            "id": "0x7408",
+            "unique_id": "0x7ecb1fa0d2270a42",
+            "vbios_version": "113-D65201-046",
+            "performance_level": "auto",
+            "max_power": "560.0",
+            "series": "AMD INSTINCT MI200 (MCM) OAM LC MBA HPE C2",
+            "model": "0x0b0c",
+            "vendor": "Advanced Micro Devices, Inc. [AMD/ATI]",
+            "sku": "D65201",
+            "sclk_range": "500Mhz - 1700Mhz",
+            "mclk_range": "400Mhz - 1600Mhz"
+        },
+        {
+            "id": "0x7408",
+            "unique_id": "0xb4943abf30958744",
+            "vbios_version": "113-D65201-046",
+            "performance_level": "auto",
+            "max_power": "0.0",
+            "series": "AMD INSTINCT MI200 (MCM) OAM LC MBA HPE C2",
+            "model": "0x0b0c",
+            "vendor": "Advanced Micro Devices, Inc. [AMD/ATI]",
+            "sku": "D65201",
+            "sclk_range": "500Mhz - 1700Mhz",
+            "mclk_range": "400Mhz - 1600Mhz"
+        }
+    ],
+    "memory": {
+        "total": 250.3837013244629
+    }
+}

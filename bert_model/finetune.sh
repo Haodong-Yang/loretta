@@ -22,8 +22,14 @@ echo "SEED: $SEED"
 echo "MODE: $MODE"
 echo "Extra args: $EXTRA_ARGS $TASK_ARGS"
 
+export HSA_FORCE_FINE_GRAIN_PCIE=1
+export RCCL_P2P_DISABLE=1
+export NCCL_P2P_DISABLE=1
+export NCCL_IB_DISABLE=1
+
 current_path=$(pwd)
-python run_glue_v5.py \
+NUM_GPUS=$(echo $DEVICE | awk -F',' '{print NF}')
+python -m torch.distributed.run --nproc_per_node=$NUM_GPUS run_glue_v5.py \
   --data_dir=default \
   --logging_dir="$current_path/logs/$TASK-$BS-$LR-$MODEL_NAME-$MODE-${20}-$(date +"%Y%m%d%H%M%S")" \
   --model_name_or_path=$MODEL --tokenizer_name=$MODEL --evaluation_strategy=steps --eval_steps=500 --logging_steps=50 \

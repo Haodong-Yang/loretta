@@ -1,0 +1,480 @@
+Some weights of DebertaForSequenceClassification were not initialized from the model checkpoint at microsoft/deberta-base and are newly initialized: ['classifier.bias', 'classifier.weight', 'pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+DebertaForSequenceClassification(
+  (deberta): DebertaModel(
+    (embeddings): DebertaEmbeddings(
+      (word_embeddings): Embedding(50265, 768, padding_idx=0)
+      (LayerNorm): DebertaLayerNorm()
+      (dropout): Dropout(p=0.1, inplace=False)
+    )
+    (encoder): DebertaEncoder(
+      (layer): ModuleList(
+        (0-11): 12 x DebertaLayer(
+          (attention): DebertaAttention(
+            (self): DisentangledSelfAttention(
+              (in_proj): Linear(in_features=768, out_features=2304, bias=False)
+              (pos_dropout): Dropout(p=0.1, inplace=False)
+              (pos_proj): Linear(in_features=768, out_features=768, bias=False)
+              (pos_q_proj): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): DebertaSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): DebertaLayerNorm()
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): DebertaIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): DebertaOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): DebertaLayerNorm()
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+      )
+      (rel_embeddings): Embedding(1024, 768)
+    )
+  )
+  (pooler): ContextPooler(
+    (dense): Linear(in_features=768, out_features=768, bias=True)
+    (dropout): Dropout(p=0, inplace=False)
+  )
+  (classifier): Linear(in_features=768, out_features=2, bias=True)
+  (dropout): Dropout(p=0.1, inplace=False)
+)
+PeftModelForSequenceClassification(
+  (base_model): LoraModel(
+    (model): DebertaForSequenceClassification(
+      (deberta): DebertaModel(
+        (embeddings): DebertaEmbeddings(
+          (word_embeddings): Embedding(50265, 768, padding_idx=0)
+          (LayerNorm): DebertaLayerNorm()
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+        (encoder): DebertaEncoder(
+          (layer): ModuleList(
+            (0-11): 12 x DebertaLayer(
+              (attention): DebertaAttention(
+                (self): DisentangledSelfAttention(
+                  (in_proj): lora.Linear(
+                    (base_layer): Linear(in_features=768, out_features=2304, bias=False)
+                    (lora_dropout): ModuleDict(
+                      (default): Identity()
+                    )
+                    (lora_A): ModuleDict(
+                      (default): Linear(in_features=768, out_features=8, bias=False)
+                    )
+                    (lora_B): ModuleDict(
+                      (default): Linear(in_features=8, out_features=2304, bias=False)
+                    )
+                    (lora_E): ModuleDict(
+                      (default): Linear(in_features=8, out_features=1, bias=False)
+                    )
+                    (lora_embedding_A): ParameterDict()
+                    (lora_embedding_B): ParameterDict()
+                    (lora_magnitude_vector): ModuleDict()
+                  )
+                  (pos_dropout): Dropout(p=0.1, inplace=False)
+                  (pos_proj): Linear(in_features=768, out_features=768, bias=False)
+                  (pos_q_proj): Linear(in_features=768, out_features=768, bias=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+                (output): DebertaSelfOutput(
+                  (dense): Linear(in_features=768, out_features=768, bias=True)
+                  (LayerNorm): DebertaLayerNorm()
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+              )
+              (intermediate): DebertaIntermediate(
+                (dense): Linear(in_features=768, out_features=3072, bias=True)
+                (intermediate_act_fn): GELUActivation()
+              )
+              (output): DebertaOutput(
+                (dense): Linear(in_features=3072, out_features=768, bias=True)
+                (LayerNorm): DebertaLayerNorm()
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+          )
+          (rel_embeddings): Embedding(1024, 768)
+        )
+      )
+      (pooler): ContextPooler(
+        (dense): Linear(in_features=768, out_features=768, bias=True)
+        (dropout): Dropout(p=0, inplace=False)
+      )
+      (classifier): ModulesToSaveWrapper(
+        (original_module): Linear(in_features=768, out_features=2, bias=True)
+        (modules_to_save): ModuleDict(
+          (default): Linear(in_features=768, out_features=2, bias=True)
+        )
+      )
+      (dropout): Dropout(p=0.1, inplace=False)
+    )
+  )
+)
+name base_model.model.deberta.encoder.layer.0.attention.self.in_proj.lora_A.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.0.attention.self.in_proj.lora_B.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.0.attention.self.in_proj.lora_E.default.weight shape torch.Size([8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.1.attention.self.in_proj.lora_A.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.1.attention.self.in_proj.lora_B.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.1.attention.self.in_proj.lora_E.default.weight shape torch.Size([8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.2.attention.self.in_proj.lora_A.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.2.attention.self.in_proj.lora_B.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.2.attention.self.in_proj.lora_E.default.weight shape torch.Size([8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.3.attention.self.in_proj.lora_A.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.3.attention.self.in_proj.lora_B.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.3.attention.self.in_proj.lora_E.default.weight shape torch.Size([8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.4.attention.self.in_proj.lora_A.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.4.attention.self.in_proj.lora_B.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.4.attention.self.in_proj.lora_E.default.weight shape torch.Size([8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.5.attention.self.in_proj.lora_A.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.5.attention.self.in_proj.lora_B.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.5.attention.self.in_proj.lora_E.default.weight shape torch.Size([8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.6.attention.self.in_proj.lora_A.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.6.attention.self.in_proj.lora_B.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.6.attention.self.in_proj.lora_E.default.weight shape torch.Size([8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.7.attention.self.in_proj.lora_A.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.7.attention.self.in_proj.lora_B.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.7.attention.self.in_proj.lora_E.default.weight shape torch.Size([8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.8.attention.self.in_proj.lora_A.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.8.attention.self.in_proj.lora_B.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.8.attention.self.in_proj.lora_E.default.weight shape torch.Size([8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.9.attention.self.in_proj.lora_A.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.9.attention.self.in_proj.lora_B.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.9.attention.self.in_proj.lora_E.default.weight shape torch.Size([8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.10.attention.self.in_proj.lora_A.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.10.attention.self.in_proj.lora_B.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.10.attention.self.in_proj.lora_E.default.weight shape torch.Size([8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.11.attention.self.in_proj.lora_A.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.11.attention.self.in_proj.lora_B.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.11.attention.self.in_proj.lora_E.default.weight shape torch.Size([8]) dtype torch.float32
+name base_model.model.classifier.modules_to_save.default.weight shape torch.Size([2, 768]) dtype torch.float32
+name base_model.model.classifier.modules_to_save.default.bias shape torch.Size([2]) dtype torch.float32
+Map: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 872/872 [00:00<00:00, 11728.78 examples/s]
+No label_names provided for model class `PeftModelForSequenceClassification`. Since `PeftModel` hides base models input arguments, if label_names is not given, label_names can't be set automatically within `Trainer`. Note that empty label_names list will be used instead.
+[34m[1mwandb[39m[22m: [33mWARNING[39m The `run_name` is currently set to the same value as `TrainingArguments.output_dir`. If this was not intended, please specify a different run name by setting the `TrainingArguments.run_name` parameter.
+  0%|                                                                                                                                                                                                                    | 0/84190 [00:00<?, ?it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  0%|                                                                                                                                                                                                        | 48/84190 [00:31<15:24:06,  1.52it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  0%|▏                                                                                                                                                                                                       | 97/84190 [01:04<15:22:40,  1.52it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  0%|▎                                                                                                                                                                                                      | 148/84190 [01:38<15:26:09,  1.51it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  0%|▍                                                                                                                                                                                                      | 197/84190 [02:10<15:15:11,  1.53it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  0%|▌                                                                                                                                                                                                      | 249/84190 [02:44<15:18:02,  1.52it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  0%|▋                                                                                                                                                                                                      | 298/84190 [03:16<15:14:51,  1.53it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  0%|▊                                                                                                                                                                                                      | 347/84190 [03:48<15:07:20,  1.54it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  0%|▉                                                                                                                                                                                                      | 400/84190 [04:23<15:06:56,  1.54it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  1%|█                                                                                                                                                                                                      | 449/84190 [04:54<15:06:47,  1.54it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  1%|█▏                                                                                                                                                                                                     | 498/84190 [05:26<15:04:51,  1.54it/s]
+  1%|█▏                                                                                                                                                                                                     | 500/84190 [05:28<15:06:56,  1.54it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  warnings.warn(DEPRECATION_WARNING, FutureWarning)██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 109/109 [00:32<00:00,  3.33it/s]
+/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/transformers/data/metrics/__init__.py:31: FutureWarning: This metric will be removed from the library soon, metrics should be handled with the 🤗 Evaluate library. You can have a look at this example script for pointers: https://github.com/huggingface/transformers/blob/main/examples/pytorch/text-classification/run_glue.py
+  warnings.warn(DEPRECATION_WARNING, FutureWarning)
+  1%|█▏                                                                                                                                                                                                     | 500/84190 [06:00<15:06:56,  1.54it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  1%|█▎                                                                                                                                                                                                     | 550/84190 [06:32<14:57:06,  1.55it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  1%|█▍                                                                                                                                                                                                     | 600/84190 [07:05<14:48:24,  1.57it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  1%|█▌                                                                                                                                                                                                     | 650/84190 [07:37<14:55:52,  1.55it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  1%|█▋                                                                                                                                                                                                     | 700/84190 [08:09<14:57:02,  1.55it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  1%|█▊                                                                                                                                                                                                     | 750/84190 [08:41<14:55:59,  1.55it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  1%|█▉                                                                                                                                                                                                     | 799/84190 [09:13<15:16:39,  1.52it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  1%|██                                                                                                                                                                                                     | 850/84190 [09:47<15:20:10,  1.51it/s]
+
+
+
+
+
+
+

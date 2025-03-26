@@ -1,0 +1,57 @@
+
+config.json: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 474/474 [00:00<00:00, 3.54MB/s]
+
+
+
+
+
+
+
+
+
+
+pytorch_model.bin: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 559M/559M [00:21<00:00, 26.0MB/s]
+Traceback (most recent call last):
+  File "/scratch/pawsey1001/haodongyang/loretta/bert_model/run_glue_v5.py", line 412, in <module>
+    main()
+  File "/scratch/pawsey1001/haodongyang/loretta/bert_model/run_glue_v5.py", line 143, in main
+    model = AutoModelForSequenceClassification.from_pretrained(
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/transformers/models/auto/auto_factory.py", line 564, in from_pretrained
+    return model_class.from_pretrained(
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/transformers/modeling_utils.py", line 262, in _wrapper
+    return func(*args, **kwargs)
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/transformers/modeling_utils.py", line 3883, in from_pretrained
+    resolved_archive_file = cached_file(
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/transformers/utils/hub.py", line 342, in cached_file
+    resolved_file = hf_hub_download(
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 862, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1011, in _hf_hub_download_to_cache_dir
+    _download_to_tmp_and_move(
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1535, in _download_to_tmp_and_move
+    with incomplete_path.open("ab") as f:
+OSError: [Errno 122] Disk quota exceeded
+Traceback (most recent call last):
+  File "/scratch/pawsey1001/haodongyang/loretta/bert_model/run_glue_v5.py", line 412, in <module>
+    main()
+  File "/scratch/pawsey1001/haodongyang/loretta/bert_model/run_glue_v5.py", line 143, in main
+    model = AutoModelForSequenceClassification.from_pretrained(
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/transformers/models/auto/auto_factory.py", line 564, in from_pretrained
+    return model_class.from_pretrained(
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/transformers/modeling_utils.py", line 262, in _wrapper
+    return func(*args, **kwargs)
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/transformers/modeling_utils.py", line 3883, in from_pretrained
+    resolved_archive_file = cached_file(
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/transformers/utils/hub.py", line 342, in cached_file
+    resolved_file = hf_hub_download(
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 862, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1011, in _hf_hub_download_to_cache_dir
+    _download_to_tmp_and_move(
+  File "/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1535, in _download_to_tmp_and_move
+    with incomplete_path.open("ab") as f:
+OSError: [Errno 122] Disk quota exceeded

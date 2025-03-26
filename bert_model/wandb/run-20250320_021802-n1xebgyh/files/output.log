@@ -1,0 +1,577 @@
+Some weights of DebertaForSequenceClassification were not initialized from the model checkpoint at microsoft/deberta-base and are newly initialized: ['classifier.bias', 'classifier.weight', 'pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+name base_model.model.deberta.encoder.layer.0.attention.self.in_proj.lora_A.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.0.attention.self.in_proj.lora_B.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.0.attention.self.in_proj.lora_E.default.weight shape torch.Size([8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.1.attention.self.in_proj.lora_A.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.1.attention.self.in_proj.lora_B.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.1.attention.self.in_proj.lora_E.default.weight shape torch.Size([8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.2.attention.self.in_proj.lora_A.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.2.attention.self.in_proj.lora_B.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.2.attention.self.in_proj.lora_E.default.weight shape torch.Size([8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.3.attention.self.in_proj.lora_A.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.3.attention.self.in_proj.lora_B.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.3.attention.self.in_proj.lora_E.default.weight shape torch.Size([8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.4.attention.self.in_proj.lora_A.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.4.attention.self.in_proj.lora_B.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.4.attention.self.in_proj.lora_E.default.weight shape torch.Size([8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.5.attention.self.in_proj.lora_A.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.5.attention.self.in_proj.lora_B.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.5.attention.self.in_proj.lora_E.default.weight shape torch.Size([8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.6.attention.self.in_proj.lora_A.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.6.attention.self.in_proj.lora_B.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.6.attention.self.in_proj.lora_E.default.weight shape torch.Size([8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.7.attention.self.in_proj.lora_A.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.7.attention.self.in_proj.lora_B.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.7.attention.self.in_proj.lora_E.default.weight shape torch.Size([8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.8.attention.self.in_proj.lora_A.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.8.attention.self.in_proj.lora_B.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.8.attention.self.in_proj.lora_E.default.weight shape torch.Size([8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.9.attention.self.in_proj.lora_A.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.9.attention.self.in_proj.lora_B.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.9.attention.self.in_proj.lora_E.default.weight shape torch.Size([8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.10.attention.self.in_proj.lora_A.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.10.attention.self.in_proj.lora_B.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.10.attention.self.in_proj.lora_E.default.weight shape torch.Size([8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.11.attention.self.in_proj.lora_A.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.11.attention.self.in_proj.lora_B.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.11.attention.self.in_proj.lora_E.default.weight shape torch.Size([8]) dtype torch.float32
+name base_model.model.classifier.modules_to_save.default.weight shape torch.Size([2, 768]) dtype torch.float32
+name base_model.model.classifier.modules_to_save.default.bias shape torch.Size([2]) dtype torch.float32
+No label_names provided for model class `PeftModelForSequenceClassification`. Since `PeftModel` hides base models input arguments, if label_names is not given, label_names can't be set automatically within `Trainer`. Note that empty label_names list will be used instead.
+[34m[1mwandb[39m[22m: [33mWARNING[39m The `run_name` is currently set to the same value as `TrainingArguments.output_dir`. If this was not intended, please specify a different run name by setting the `TrainingArguments.run_name` parameter.
+  0%|                                                                                                                                                                                                                    | 0/84190 [00:00<?, ?it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  0%|                                                                                                                                                                                                        | 48/84190 [00:32<15:21:26,  1.52it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  0%|▏                                                                                                                                                                                                      | 100/84190 [01:06<15:22:39,  1.52it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  0%|▎                                                                                                                                                                                                      | 150/84190 [01:39<15:46:51,  1.48it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  0%|▍                                                                                                                                                                                                      | 198/84190 [02:12<15:44:37,  1.48it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  0%|▌                                                                                                                                                                                                      | 248/84190 [02:46<15:41:56,  1.49it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  0%|▋                                                                                                                                                                                                      | 299/84190 [03:20<15:48:17,  1.47it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  0%|▊                                                                                                                                                                                                      | 349/84190 [03:54<15:40:30,  1.49it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  0%|▉                                                                                                                                                                                                      | 400/84190 [04:28<15:29:56,  1.50it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  1%|█                                                                                                                                                                                                      | 448/84190 [05:00<15:29:12,  1.50it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  1%|█▏                                                                                                                                                                                                     | 499/84190 [05:58<23:10:47,  1.00it/s]
+  1%|█▏                                                                                                                                                                                                     | 500/84190 [05:59<23:25:31,  1.01s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  warnings.warn(DEPRECATION_WARNING, FutureWarning)██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 109/109 [00:59<00:00,  2.02it/s]
+/scratch/pawsey1001/haodongyang/envs/envs/bert/lib/python3.10/site-packages/transformers/data/metrics/__init__.py:31: FutureWarning: This metric will be removed from the library soon, metrics should be handled with the 🤗 Evaluate library. You can have a look at this example script for pointers: https://github.com/huggingface/transformers/blob/main/examples/pytorch/text-classification/run_glue.py
+  warnings.warn(DEPRECATION_WARNING, FutureWarning)
+  1%|█▏                                                                                                                                                                                                     | 500/84190 [06:59<23:25:31,  1.01s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  1%|█▎                                                                                                                                                                                                     | 551/84190 [07:43<18:05:18,  1.28it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  1%|█▍                                                                                                                                                                                                     | 600/84190 [08:25<20:35:04,  1.13it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  1%|█▌                                                                                                                                                                                                     | 649/84190 [09:05<19:33:03,  1.19it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  1%|█▋                                                                                                                                                                                                     | 699/84190 [09:45<18:10:30,  1.28it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  1%|█▊                                                                                                                                                                                                     | 750/84190 [10:27<19:24:53,  1.19it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  1%|█▉                                                                                                                                                                                                     | 799/84190 [11:05<17:39:21,  1.31it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  1%|██                                                                                                                                                                                                     | 851/84190 [11:45<18:11:30,  1.27it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  1%|██▏                                                                                                                                                                                                    | 900/84190 [12:22<17:22:41,  1.33it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  1%|██▏                                                                                                                                                                                                    | 948/84190 [12:57<16:51:44,  1.37it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  1%|██▎                                                                                                                                                                                                    | 998/84190 [13:33<17:41:32,  1.31it/s]
+  1%|██▎                                                                                                                                                                                                   | 1000/84190 [13:34<17:12:13,  1.34it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 95%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▋         | 104/109 [00:30<00:01,  3.36it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  1%|██▍                                                                                                                                                                                                   | 1050/84190 [14:44<16:25:50,  1.41it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  1%|██▌                                                                                                                                                                                                   | 1099/84190 [15:19<17:20:36,  1.33it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  1%|██▋                                                                                                                                                                                                   | 1150/84190 [15:56<15:57:35,  1.45it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  1%|██▊                                                                                                                                                                                                   | 1200/84190 [16:32<16:28:13,  1.40it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

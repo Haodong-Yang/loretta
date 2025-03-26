@@ -1,0 +1,50 @@
+Some weights of DebertaForSequenceClassification were not initialized from the model checkpoint at microsoft/deberta-base and are newly initialized: ['classifier.bias', 'classifier.weight', 'pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+<class 'peft.peft_model.PeftModelForSequenceClassification'>
+name base_model.model.deberta.encoder.layer.0.attention.self.in_proj.lora_A.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.0.attention.self.in_proj.lora_B.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.1.attention.self.in_proj.lora_A.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.1.attention.self.in_proj.lora_B.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.2.attention.self.in_proj.lora_A.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.2.attention.self.in_proj.lora_B.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.3.attention.self.in_proj.lora_A.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.3.attention.self.in_proj.lora_B.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.4.attention.self.in_proj.lora_A.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.4.attention.self.in_proj.lora_B.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.5.attention.self.in_proj.lora_A.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.5.attention.self.in_proj.lora_B.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.6.attention.self.in_proj.lora_A.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.6.attention.self.in_proj.lora_B.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.7.attention.self.in_proj.lora_A.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.7.attention.self.in_proj.lora_B.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.8.attention.self.in_proj.lora_A.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.8.attention.self.in_proj.lora_B.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.9.attention.self.in_proj.lora_A.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.9.attention.self.in_proj.lora_B.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.10.attention.self.in_proj.lora_A.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.10.attention.self.in_proj.lora_B.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.11.attention.self.in_proj.lora_A.default.weight shape torch.Size([8, 768]) dtype torch.float32
+name base_model.model.deberta.encoder.layer.11.attention.self.in_proj.lora_B.default.weight shape torch.Size([2304, 8]) dtype torch.float32
+name base_model.model.classifier.modules_to_save.default.weight shape torch.Size([2, 768]) dtype torch.float32
+name base_model.model.classifier.modules_to_save.default.bias shape torch.Size([2]) dtype torch.float32
+No label_names provided for model class `PeftModelForSequenceClassification`. Since `PeftModel` hides base models input arguments, if label_names is not given, label_names can't be set automatically within `Trainer`. Note that empty label_names list will be used instead.
+Traceback (most recent call last):
+  File "/scratch/pawsey1001/haodongyang/loretta/bert_model/run_glue_v5.py", line 416, in <module>
+    main()
+  File "/scratch/pawsey1001/haodongyang/loretta/bert_model/run_glue_v5.py", line 356, in main
+    trainer.train()
+  File "/software/projects/pawsey1001/haodongyang/micromamba/envs/bert/lib/python3.10/site-packages/transformers/trainer.py", line 2241, in train
+    return inner_training_loop(
+  File "/software/projects/pawsey1001/haodongyang/micromamba/envs/bert/lib/python3.10/site-packages/transformers/trainer.py", line 2365, in _inner_training_loop
+    model, self.optimizer = self.accelerator.prepare(self.model, self.optimizer)
+  File "/software/projects/pawsey1001/haodongyang/micromamba/envs/bert/lib/python3.10/site-packages/accelerate/accelerator.py", line 1398, in prepare
+    result = tuple(
+  File "/software/projects/pawsey1001/haodongyang/micromamba/envs/bert/lib/python3.10/site-packages/accelerate/accelerator.py", line 1399, in <genexpr>
+    self._prepare_one(obj, first_pass=True, device_placement=d) for obj, d in zip(args, device_placement)
+  File "/software/projects/pawsey1001/haodongyang/micromamba/envs/bert/lib/python3.10/site-packages/accelerate/accelerator.py", line 1272, in _prepare_one
+    return self.prepare_model(obj, device_placement=device_placement)
+  File "/software/projects/pawsey1001/haodongyang/micromamba/envs/bert/lib/python3.10/site-packages/accelerate/accelerator.py", line 1540, in prepare_model
+    model = torch.nn.parallel.DistributedDataParallel(
+  File "/software/projects/pawsey1001/haodongyang/micromamba/envs/bert/lib/python3.10/site-packages/torch/nn/parallel/distributed.py", line 825, in __init__
+    _verify_param_shape_across_processes(self.process_group, parameters)
+Memory used after the specific part: 532.857421875 MB
