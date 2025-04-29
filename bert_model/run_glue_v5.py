@@ -24,6 +24,13 @@ logger = logging.getLogger(__name__)
 initial_memory_allocated = torch.cuda.memory_allocated()
 initial_memory_cached = torch.cuda.memory_cached()
 
+class AdaLoRATrainer(Trainer):
+    """
+    Trainer subclass that calls `model.base_model.update_and_allocate(step) after every optimizer.step()
+    """
+    def optimizer_step(self, optimizer, model, optimizer_closure=None, **kwargs):
+        super().optimizer_step(optimizer, model, optimizer_closure, **kwargs)
+        self.model.base_model.update_and_allocate(self.state.global_step)
 
 # Initialize the argument dataclass
 @dataclass
@@ -76,7 +83,7 @@ class OurArguments(TrainingArguments):
     rep_bottleneck: int = 8
     rep_alpha: int = 16
     # LoRA
-    lora_alpha: int = 16  # alpha in LoRA
+    lora_alpha: int = 8  # alpha in LoRA
     lora_r: int = 8  # r in LoRA
 
     adapter_size: int = 64
@@ -123,7 +130,7 @@ def main():
         'cola': 'cola',
         'qqp': 'qqp',
         'qnli': 'qnli',
-        'pte': 'rte',
+        'rte': 'rte',
         'mrpc': 'mrpc',
     }
     data_args.task_name = task_name_map[data_args.task_name]
@@ -174,6 +181,12 @@ def main():
     if our_args.tuning_type == 'lora':
         from peft import get_peft_model, LoraConfig, TaskType
         peft_config = LoraConfig(task_type=TaskType.SEQ_CLS, inference_mode=False, r=our_args.tensor_rank,
+                                 lora_alpha=our_args.lora_alpha,
+                                 lora_dropout=0)
+        model = get_peft_model(model, peft_config)
+    if our_args.tuning_type == 'adalora':
+        from peft import get_peft_model, AdaLoraConfig, TaskType
+        peft_config = AdaLoraConfig(task_type=TaskType.SEQ_CLS, inference_mode=False, init_r=16, target_r=8, tinit=800, tfinal=3500, deltaT=10,
                                  lora_alpha=our_args.lora_alpha,
                                  lora_dropout=0)
         model = get_peft_model(model, peft_config)
@@ -330,13 +343,23 @@ def main():
 
         return compute_metrics_fn
 
-    trainer = Trainer(
-        model=model,
-        args=our_args,
-        train_dataset=train_dataset,
-        eval_dataset=eval_dataset,
-        compute_metrics=build_compute_metrics_fn(data_args.task_name),
-    )
+    if our_args.tuning_type == 'adalora':
+        trainer = AdaLoRATrainer(
+            model=model,
+            args=our_args,
+            train_dataset=train_dataset,
+            eval_dataset=eval_dataset,
+            compute_metrics=build_compute_metrics_fn(data_args.task_name),
+        )
+
+    else:
+        trainer = Trainer(
+            model=model,
+            args=our_args,
+            train_dataset=train_dataset,
+            eval_dataset=eval_dataset,
+            compute_metrics=build_compute_metrics_fn(data_args.task_name),
+        )
 
     # Training
     model.eval()
