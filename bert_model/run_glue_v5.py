@@ -24,13 +24,51 @@ logger = logging.getLogger(__name__)
 initial_memory_allocated = torch.cuda.memory_allocated()
 initial_memory_cached = torch.cuda.memory_cached()
 
+from torch import nn
+from typing import Any
+class NewLoRATrainer(Trainer):
+    def training_step(
+        self,
+        model: nn.Module,
+        inputs: dict[str, Union[torch.Tensor, Any]],
+        num_items_in_batch=None
+    ) -> torch.Tensor:
+
+        loss = super().training_step(model, inputs, num_items_in_batch=num_items_in_batch)
+
+        base = getattr(model, "base_model", None) or model.get_base_model()
+        base.update_and_allocate()
+
+        return loss
+
 class AdaLoRATrainer(Trainer):
-    """
-    Trainer subclass that calls `model.base_model.update_and_allocate(step) after every optimizer.step()
-    """
-    def optimizer_step(self, optimizer, model, optimizer_closure=None, **kwargs):
-        super().optimizer_step(optimizer, model, optimizer_closure, **kwargs)
-        self.model.base_model.update_and_allocate(self.state.global_step)
+    def training_step(
+        self,
+        model: nn.Module,
+        inputs: dict[str, Union[torch.Tensor, Any]],
+        num_items_in_batch=None
+    ) -> torch.Tensor:
+
+        loss = super().training_step(model, inputs, num_items_in_batch=num_items_in_batch)
+
+        cur_step = self.state.global_step + 1
+        base = getattr(model, "base_model", None) or model.get_base_model()
+        base.update_and_allocate(cur_step)
+
+        return loss
+
+from transformers import TrainerCallback
+class EpochEndCallback(TrainerCallback):
+    def __init__(self, model):
+        self.model = model
+
+    def on_epoch_end(self, args, state, control, **kwargs):
+        # state.epoch 是当前 epoch（从 0 开始算起，1.0 表示第 2 轮刚跑完）
+        cur_epoch = int(state.epoch) + 1
+        print(f"—— Epoch {cur_epoch}/{args.num_train_epochs} 完成，执行自定义逻辑 ——")
+        base = getattr(self.model, "base_model", None) or self.model.get_base_model()
+        base.switch()
+
 
 # Initialize the argument dataclass
 @dataclass
@@ -65,7 +103,7 @@ class OurArguments(TrainingArguments):
     no_auto_device: bool = (
         False  # do not load model by auto device; should turn this on when using FSDP
     )
-    wandb_project: str = "camera-ready"
+    wandb_project: str = "LoRA"
     logging_dir: str = "./logs/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
 
     # parameter setup for PEFT methods
@@ -83,7 +121,7 @@ class OurArguments(TrainingArguments):
     rep_bottleneck: int = 8
     rep_alpha: int = 16
     # LoRA
-    lora_alpha: int = 8  # alpha in LoRA
+    lora_alpha: int = 16  # alpha in LoRA
     lora_r: int = 8  # r in LoRA
 
     adapter_size: int = 64
@@ -120,7 +158,7 @@ def main():
 
     wandb_run_name = str(data_args.task_name) + '-' + str(model_args.model_name_or_path.replace('/', '-')) + '-' \
                      + str(our_args.learning_rate)  + '-' \
-                     + str(our_args.tuning_type) + '-lorar-' + str(our_args.tensor_rank) + '-' + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+                     + str(our_args.tuning_type) + str(our_args.lora_r) + '-' + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
     wandb.init(project=f"<{our_args.wandb_project}>", name=wandb_run_name)
     set_seed(our_args.seed)
     task_name_map = {
@@ -153,43 +191,45 @@ def main():
         config=config,
     )
 
-    if our_args.tuning_type == 'loretta_rep':
-        from loretta import LorettaRepConfig, get_peft_model, TaskType
-        peft_config = LorettaRepConfig(
-            r=our_args.rep_bottleneck,
-            lora_alpha=our_args.rep_alpha,
-            target_modules=our_args.target_modules,
-            lora_dropout=0.05,
-            bias="none",
-            task_type=our_args.task_type,
-            tensor_rank=our_args.tensor_rank
-        )
-        model = get_peft_model(model, peft_config)
-    if our_args.tuning_type == 'loretta_adp':
-        from loretta import get_peft_model, LorettaAdpConfig, TaskType
-        peft_config = LorettaAdpConfig(
-            bottleneck_size=our_args.adp_bottleneck,
-            non_linearity=our_args.non_linearity,
-            adapter_dropout=our_args.adapter_dropout,
-            target_modules=our_args.target_modules,
-            scaling=our_args.scaling,
-            bias="none",
-            task_type=our_args.task_type,
-            tensor_rank=our_args.tensor_rank,
-        )
-        model = get_peft_model(model, peft_config)
+    # if our_args.tuning_type == 'loretta_rep':
+    #     from loretta import LorettaRepConfig, get_peft_model, TaskType
+    #     peft_config = LorettaRepConfig(
+    #         r=our_args.rep_bottleneck,
+    #         lora_alpha=our_args.rep_alpha,
+    #         target_modules=our_args.target_modules,
+    #         lora_dropout=0.05,
+    #         bias="none",
+    #         task_type=our_args.task_type,
+    #         tensor_rank=our_args.tensor_rank
+    #     )
+    #     model = get_peft_model(model, peft_config)
+    # if our_args.tuning_type == 'loretta_adp':
+    #     from loretta import get_peft_model, LorettaAdpConfig, TaskType
+    #     peft_config = LorettaAdpConfig(
+    #         bottleneck_size=our_args.adp_bottleneck,
+    #         non_linearity=our_args.non_linearity,
+    #         adapter_dropout=our_args.adapter_dropout,
+    #         target_modules=our_args.target_modules,
+    #         scaling=our_args.scaling,
+    #         bias="none",
+    #         task_type=our_args.task_type,
+    #         tensor_rank=our_args.tensor_rank,
+    #     )
+    #     model = get_peft_model(model, peft_config)
     if our_args.tuning_type == 'lora':
         from peft import get_peft_model, LoraConfig, TaskType
         peft_config = LoraConfig(task_type=TaskType.SEQ_CLS, inference_mode=False, r=our_args.tensor_rank,
                                  lora_alpha=our_args.lora_alpha,
                                  lora_dropout=0)
         model = get_peft_model(model, peft_config)
-    if our_args.tuning_type == 'adalora':
+    
+    if our_args.tuning_type == 'newlora':
         from peft import get_peft_model, AdaLoraConfig, TaskType
-        peft_config = AdaLoraConfig(task_type=TaskType.SEQ_CLS, inference_mode=False, init_r=16, target_r=8, tinit=800, tfinal=3500, deltaT=10,
+        peft_config = AdaLoraConfig(task_type=TaskType.SEQ_CLS, inference_mode=False, r=8, total_step=1, init_lora_weights="pissa",
                                  lora_alpha=our_args.lora_alpha,
                                  lora_dropout=0)
         model = get_peft_model(model, peft_config)
+    
     if our_args.tuning_type == 'adapters':
         from peft_local import BottleneckConfig, get_peft_model, TaskType  # noqa: E402
         bottleneck_size: int = 64
@@ -332,6 +372,17 @@ def main():
         subset_size = 1000  # Change this to the desired size of your subset
         eval_dataset = eval_dataset.shuffle(seed=our_args.seed).select([i for i in range(subset_size)])
 
+
+    if our_args.tuning_type == 'adalora':
+        from peft import get_peft_model, AdaLoraConfig, TaskType
+        peft_config = AdaLoraConfig(task_type=TaskType.SEQ_CLS, inference_mode=False, init_r=8, target_r=4, tinit=800, tfinal=3500, deltaT=10, total_step = len(train_dataset) * our_args.num_train_epochs,
+                                 lora_alpha=our_args.lora_alpha,
+                                 lora_dropout=0)
+        model = get_peft_model(model, peft_config)
+
+    logger.info("Total Parameter Count: {}M".format(model.num_parameters() / 1000 / 1000))
+    logger.info("Total and trainable params: {}".format(str(get_parameter_number(model))))
+
     # Initialized trainer and evaluation function
     def build_compute_metrics_fn(task_name: str) -> Callable[[EvalPrediction], Dict]:
         def compute_metrics_fn(p: EvalPrediction):
@@ -343,7 +394,17 @@ def main():
 
         return compute_metrics_fn
 
-    if our_args.tuning_type == 'adalora':
+    if our_args.tuning_type == 'newlora':
+        trainer = NewLoRATrainer(
+            model=model,
+            args=our_args,
+            train_dataset=train_dataset,
+            eval_dataset=eval_dataset,
+            compute_metrics=build_compute_metrics_fn(data_args.task_name),
+            callbacks=[EpochEndCallback(model)],
+        )
+
+    elif our_args.tuning_type == 'adalora':
         trainer = AdaLoRATrainer(
             model=model,
             args=our_args,
