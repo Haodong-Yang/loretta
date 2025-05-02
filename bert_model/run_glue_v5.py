@@ -5,8 +5,8 @@ import torch
 import logging
 import os
 from dataclasses import dataclass, field
-from typing import Callable, Dict, Optional, List, Union
-os.environ["WANDB_LOG_MODEL"] = "false" # log all model checkpoints
+from typing import Callable, Dict, Optional, List, Union, Any
+os.environ["WANDB_LOG_MODEL"] = "false"
 import numpy as np
 from transformers import AutoConfig, AutoTokenizer, EvalPrediction, GlueDataset, AutoModelForSequenceClassification, PretrainedConfig, AlbertForSequenceClassification
 from transformers import Trainer
@@ -25,7 +25,6 @@ initial_memory_allocated = torch.cuda.memory_allocated()
 initial_memory_cached = torch.cuda.memory_cached()
 
 from torch import nn
-from typing import Any
 class NewLoRATrainer(Trainer):
     def training_step(
         self,
