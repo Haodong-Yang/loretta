@@ -108,7 +108,6 @@ class OurArguments(TrainingArguments):
     # parameter setup for PEFT methods
     tuning_type: str = 'ft'
     # LoRETTA
-    tensor_rank: int = 5
     target_modules: List[str] = None  # set to be None when use official support model
     task_type: str = 'SEQ_CLS'  # choose from "SEQ_CLS", "SEQ_2_SEQ_LM", "CAUSAL_LM", "TOKEN_CLS"
     # LoRETTA_adp
@@ -157,7 +156,10 @@ def main():
 
     wandb_run_name = str(data_args.task_name) + '-' + str(model_args.model_name_or_path.replace('/', '-')) + '-' \
                      + str(our_args.learning_rate)  + '-' \
-                     + str(our_args.tuning_type) + str(our_args.lora_r) + '-' + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+                     + str(our_args.tuning_type) + '-' + str(our_args.lora_r) \
+                     + '-Epoch-' + str(our_args.per_device_train_batch_size) \
+                     + '-BS-' + str(our_args.per_device_train_batch_size) + '-' \
+                     + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
     wandb.init(project=f"<{our_args.wandb_project}>", name=wandb_run_name)
     set_seed(our_args.seed)
     task_name_map = {
@@ -190,34 +192,9 @@ def main():
         config=config,
     )
 
-    # if our_args.tuning_type == 'loretta_rep':
-    #     from loretta import LorettaRepConfig, get_peft_model, TaskType
-    #     peft_config = LorettaRepConfig(
-    #         r=our_args.rep_bottleneck,
-    #         lora_alpha=our_args.rep_alpha,
-    #         target_modules=our_args.target_modules,
-    #         lora_dropout=0.05,
-    #         bias="none",
-    #         task_type=our_args.task_type,
-    #         tensor_rank=our_args.tensor_rank
-    #     )
-    #     model = get_peft_model(model, peft_config)
-    # if our_args.tuning_type == 'loretta_adp':
-    #     from loretta import get_peft_model, LorettaAdpConfig, TaskType
-    #     peft_config = LorettaAdpConfig(
-    #         bottleneck_size=our_args.adp_bottleneck,
-    #         non_linearity=our_args.non_linearity,
-    #         adapter_dropout=our_args.adapter_dropout,
-    #         target_modules=our_args.target_modules,
-    #         scaling=our_args.scaling,
-    #         bias="none",
-    #         task_type=our_args.task_type,
-    #         tensor_rank=our_args.tensor_rank,
-    #     )
-    #     model = get_peft_model(model, peft_config)
     if our_args.tuning_type == 'lora':
         from peft import get_peft_model, LoraConfig, TaskType
-        peft_config = LoraConfig(task_type=TaskType.SEQ_CLS, inference_mode=False, r=our_args.tensor_rank,
+        peft_config = LoraConfig(task_type=TaskType.SEQ_CLS, inference_mode=False, r=our_args.lora_r,
                                  lora_alpha=our_args.lora_alpha,
                                  lora_dropout=0)
         model = get_peft_model(model, peft_config)
@@ -367,9 +344,9 @@ def main():
     train_dataset = dataset["train"]
     eval_dataset = dataset["validation_matched" if data_args.task_name == "mnli" else "validation"]
     test_dataset = dataset["test_matched" if data_args.task_name == "mnli" else "test"]
-    if data_args.task_name == "qqp":
-        subset_size = 1000  # Change this to the desired size of your subset
-        eval_dataset = eval_dataset.shuffle(seed=our_args.seed).select([i for i in range(subset_size)])
+    # if data_args.task_name == "qqp":
+    #     subset_size = 1000  # Change this to the desired size of your subset
+    #     eval_dataset = eval_dataset.shuffle(seed=our_args.seed).select([i for i in range(subset_size)])
 
 
     if our_args.tuning_type == 'adalora':
@@ -438,11 +415,12 @@ def main():
 
         # Loop to handle MNLI double evaluation (matched, mis-matched)
         eval_datasets = [eval_dataset]
-        # if data_args.task_name == "mnli":
-        #     mnli_mm_data_args = dataclasses.replace(data_args, task_name="mnli-mm")
-        #     eval_datasets.append(
-        #         GlueDataset(mnli_mm_data_args, tokenizer=tokenizer, mode="dev", cache_dir=model_args.cache_dir)
-        #     )
+        if data_args.task_name == "mnli":
+            # mnli_mm_data_args = dataclasses.replace(data_args, task_name="mnli-mm")
+            mnli_mm_data_args = dataclasses.replace(data_args, task_name="mnli-mismatched")
+            eval_datasets.append(
+                GlueDataset(mnli_mm_data_args, tokenizer=tokenizer, mode="dev", cache_dir=model_args.cache_dir)
+            )
 
         for eval_dataset in eval_datasets:
             # trainer.compute_metrics = build_compute_metrics_fn(eval_dataset.args.task_name)
@@ -470,7 +448,7 @@ def main():
             if output_mode == "classification":
                 predictions = np.argmax(predictions, axis=1)
             output_test_file = os.path.join(
-                our_args.output_dir, f"test_results_{test_dataset.args.task_name}.txt"
+                our_args.output_dir, f"test_results_{test_dataset.task_name}.txt"
             )
             if trainer.is_world_process_zero():
                 with open(output_test_file, "w") as writer:
