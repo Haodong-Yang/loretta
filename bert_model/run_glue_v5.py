@@ -35,8 +35,9 @@ class NewLoRATrainer(Trainer):
 
         loss = super().training_step(model, inputs, num_items_in_batch=num_items_in_batch)
 
+        cur_step = self.state.global_step + 1
         base = getattr(model, "base_model", None) or model.get_base_model()
-        base.update_and_allocate()
+        base.update_and_allocate(cur_step)
 
         return loss
 
@@ -119,12 +120,22 @@ class OurArguments(TrainingArguments):
     rep_bottleneck: int = 8
     rep_alpha: int = 16
     # LoRA
-    lora_alpha: int = 16  # alpha in LoRA
+    lora_alpha: int = 8  # alpha in LoRA
     lora_r: int = 8  # r in LoRA
 
     adapter_size: int = 64
     tensor_shape_opt: int = 0
     report_to: str = "wandb"
+
+    target_r: int = 4  # target rank
+
+    coef: float = 0.1  # coefficient
+    init_warmup: int = 600  # initial warmup
+    final_warmup: int = 1800
+    mask_interval: int = 1  # mask interval
+    seed: int = 42
+    p_keep: float = 0.5  # keep probability
+    # max_seq_length: int = 128  # max sequence length
 
 
 def get_parameter_number(net):
@@ -157,9 +168,10 @@ def main():
     wandb_run_name = str(data_args.task_name) + '-' + str(model_args.model_name_or_path.replace('/', '-')) + '-' \
                      + str(our_args.learning_rate)  + '-' \
                      + str(our_args.tuning_type) + '-' + str(our_args.lora_r) \
-                     + '-Epoch-' + str(our_args.per_device_train_batch_size) \
+                     + '-Epoch-' + str(our_args.num_train_epochs) \
                      + '-BS-' + str(our_args.per_device_train_batch_size) + '-' \
-                     + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+                     + datetime.datetime.now().strftime("%Y%m%d-%H%M%S") + '-' \
+                     + "target-" + str(our_args.target_r) + '-p_keep-' + str(our_args.p_keep)
     wandb.init(project=f"<{our_args.wandb_project}>", name=wandb_run_name)
     set_seed(our_args.seed)
     task_name_map = {
@@ -196,13 +208,15 @@ def main():
         from peft import get_peft_model, LoraConfig, TaskType
         peft_config = LoraConfig(task_type=TaskType.SEQ_CLS, inference_mode=False, r=our_args.lora_r,
                                  lora_alpha=our_args.lora_alpha,
+                                 target_modules=["query_proj", "key_proj", "value_proj", "intermediate.dense", "output.dense", "attention.output.dense"],
                                  lora_dropout=0)
         model = get_peft_model(model, peft_config)
-    
-    if our_args.tuning_type == 'newlora':
-        from peft import get_peft_model, AdaLoraConfig, TaskType
-        peft_config = AdaLoraConfig(task_type=TaskType.SEQ_CLS, inference_mode=False, r=8, total_step=1, init_lora_weights="pissa",
+
+    if our_args.tuning_type == 'pissa':
+        from peft import get_peft_model, LoraConfig, TaskType
+        peft_config = LoraConfig(task_type=TaskType.SEQ_CLS, inference_mode=False, r=our_args.lora_r, init_lora_weights="pissa",
                                  lora_alpha=our_args.lora_alpha,
+                                 target_modules=["query_proj", "key_proj", "value_proj", "intermediate.dense", "output.dense", "attention.output.dense"],
                                  lora_dropout=0)
         model = get_peft_model(model, peft_config)
     
@@ -252,8 +266,8 @@ def main():
         peft_config = PromptEncoderConfig(task_type="SEQ_CLS", num_virtual_tokens=100, encoder_hidden_size=128)
         model = get_peft_model(model, peft_config)
 
-    logger.info("Total Parameter Count: {}M".format(model.num_parameters() / 1000 / 1000))
-    logger.info("Total and trainable params: {}".format(str(get_parameter_number(model))))
+    # logger.info("Total Parameter Count: {}M".format(model.num_parameters() / 1000 / 1000))
+    # logger.info("Total and trainable params: {}".format(str(get_parameter_number(model))))
 
 
     # process the dataset
@@ -344,15 +358,27 @@ def main():
     train_dataset = dataset["train"]
     eval_dataset = dataset["validation_matched" if data_args.task_name == "mnli" else "validation"]
     test_dataset = dataset["test_matched" if data_args.task_name == "mnli" else "test"]
-    # if data_args.task_name == "qqp":
-    #     subset_size = 1000  # Change this to the desired size of your subset
-    #     eval_dataset = eval_dataset.shuffle(seed=our_args.seed).select([i for i in range(subset_size)])
+    if data_args.task_name == "qqp":
+        subset_size = 1000  # Change this to the desired size of your subset
+        eval_dataset = eval_dataset.shuffle(seed=our_args.seed).select([i for i in range(subset_size)])
 
 
     if our_args.tuning_type == 'adalora':
         from peft import get_peft_model, AdaLoraConfig, TaskType
-        peft_config = AdaLoraConfig(task_type=TaskType.SEQ_CLS, inference_mode=False, init_r=8, target_r=4, tinit=800, tfinal=3500, deltaT=10, total_step = len(train_dataset) * our_args.num_train_epochs,
+        peft_config = AdaLoraConfig(task_type=TaskType.SEQ_CLS, inference_mode=False, init_r=our_args.lora_r, target_r=our_args.target_r, 
+                                 tinit=our_args.init_warmup, tfinal=our_args.final_warmup, deltaT=our_args.mask_interval, total_step = len(train_dataset) * our_args.num_train_epochs,
                                  lora_alpha=our_args.lora_alpha,
+                                 orth_reg_weight=our_args.coef,
+                                 lora_dropout=0,
+                                 target_modules=["query","key","value","intermediate.dense","output.dense","attention.output.dense"]
+                                 )
+        model = get_peft_model(model, peft_config)
+    
+    if our_args.tuning_type == 'newlora':
+        from peft import get_peft_model, AdaLoraConfig, TaskType
+        peft_config = AdaLoraConfig(task_type=TaskType.SEQ_CLS, inference_mode=False, target_r=our_args.target_r, r=our_args.lora_r, p_keep=our_args.p_keep, init_lora_weights="pissa", total_step = len(train_dataset) * our_args.num_train_epochs // our_args.per_device_train_batch_size,
+                                 lora_alpha=our_args.lora_alpha,
+                                 target_modules=["query_proj", "key_proj", "value_proj", "intermediate.dense", "output.dense", "attention.output.dense"],
                                  lora_dropout=0)
         model = get_peft_model(model, peft_config)
 
@@ -377,8 +403,9 @@ def main():
             train_dataset=train_dataset,
             eval_dataset=eval_dataset,
             compute_metrics=build_compute_metrics_fn(data_args.task_name),
-            callbacks=[EpochEndCallback(model)],
         )
+        # callbacks=[EpochEndCallback(model)],
+        
 
     elif our_args.tuning_type == 'adalora':
         trainer = AdaLoRATrainer(
@@ -408,6 +435,19 @@ def main():
         if trainer.is_world_process_zero():
             tokenizer.save_pretrained(our_args.output_dir)
 
+        peft_model = trainer.model  # 包含了你训练好的分类头
+        merged_model = peft_model.merge_and_unload()
+        merged_model.save_pretrained(our_args.output_dir)
+
+    
+    # TODO:delet
+    
+
+
+
+
+
+
     # Evaluation
     eval_results = {}
     if our_args.do_eval:
@@ -415,52 +455,127 @@ def main():
 
         # Loop to handle MNLI double evaluation (matched, mis-matched)
         eval_datasets = [eval_dataset]
+        tasks = [data_args.task_name]
         if data_args.task_name == "mnli":
+            eval_mm_dataset = dataset["validation_mismatched"]
             # mnli_mm_data_args = dataclasses.replace(data_args, task_name="mnli-mm")
-            mnli_mm_data_args = dataclasses.replace(data_args, task_name="mnli-mismatched")
-            eval_datasets.append(
-                GlueDataset(mnli_mm_data_args, tokenizer=tokenizer, mode="dev", cache_dir=model_args.cache_dir)
-            )
+            # mnli_mm_data_args = dataclasses.replace(data_args, task_name="mnli-mismatched")
+            # eval_datasets.append(
+            #     GlueDataset(mnli_mm_data_args, tokenizer=tokenizer, mode="dev", cache_dir=model_args.cache_dir)
+            # )
+            eval_datasets.append(eval_mm_dataset)
+            tasks.append("mnli-mm")
 
-        for eval_dataset in eval_datasets:
+        for eval_dataset, task in zip(eval_datasets, tasks):
             # trainer.compute_metrics = build_compute_metrics_fn(eval_dataset.args.task_name)
             eval_result = trainer.evaluate(eval_dataset=eval_dataset)
 
             output_eval_file = os.path.join(
-                our_args.output_dir, f"eval_results_{data_args.task_name}.txt"
+                our_args.output_dir, f"eval_results_{task}.txt"
             )
             if trainer.is_world_process_zero():
                 with open(output_eval_file, "w") as writer:
-                    logger.info("***** Eval results {} *****".format(data_args.task_name))
+                    logger.info("***** Eval results {} *****".format(task))
                     for key, value in eval_result.items():
                         logger.info("  %s = %s", key, value)
                         writer.write("%s = %s\n" % (key, value))
 
             eval_results.update(eval_result)
 
+    # print("==========================")
+    # print(trainer.state.best_model_checkpoint)
+    # print("==========================")
+
+    # peft_model = trainer.model  # 包含了你训练好的分类头
+    # merged_model = peft_model.merge_and_unload()
+    # merged_model.save_pretrained("./best_model_full——hahaa")
+
+
+
     if our_args.do_predict:
 
         test_results = {}
         logging.info("*** Test ***")
         test_datasets = [test_dataset]
-        for test_dataset in test_datasets:
+        tasks = [data_args.task_name]
+        if data_args.task_name == "mnli":
+            test_mm_dataset = dataset["test_mismatched"]
+            # mnli_mm_data_args = dataclasses.replace(data_args, task_name="mnli-mm")
+            # mnli_mm_data_args = dataclasses.replace(data_args, task_name="mnli-mismatched")
+            # eval_datasets.append(
+            #     GlueDataset(mnli_mm_data_args, tokenizer=tokenizer, mode="dev", cache_dir=model_args.cache_dir)
+            # )
+            test_datasets.append(test_mm_dataset)
+            tasks.append("mnli-mm")
+
+        for test_dataset, task in zip(test_datasets, tasks):
             predictions = trainer.predict(test_dataset=test_dataset).predictions
             if output_mode == "classification":
                 predictions = np.argmax(predictions, axis=1)
             output_test_file = os.path.join(
-                our_args.output_dir, f"test_results_{test_dataset.task_name}.txt"
+                our_args.output_dir, f"{task.upper()}.txt"
             )
             if trainer.is_world_process_zero():
                 with open(output_test_file, "w") as writer:
-                    logger.info("***** Test results {} *****".format(test_dataset.args.task_name))
+                    logger.info("***** Test results {} *****".format(task.upper()))
                     writer.write("index\tprediction\n")
                     for index, item in enumerate(predictions):
                         if output_mode == "regression":
                             writer.write("%d\t%3.3f\n" % (index, item))
                         else:
-                            item = test_dataset.get_labels()[item]
+                            item = label_list[item]
                             writer.write("%d\t%s\n" % (index, item))
     return eval_results
+
+
+
+    # if our_args.do_predict:
+    #     test_results = {}
+    #     logging.info("*** Test ***")
+    #     test_datasets = [test_dataset]
+    #     for test_dataset in test_datasets:
+    #         # 1. 拿到 ClassLabel Feature，方便把 int 转 str
+    #         from datasets import ClassLabel
+    #         label_feat = test_dataset.features.get("label", None)
+    #         is_classification = output_mode == "classification"
+
+    #         # 2. 预测并取 argmax（如果是分类）
+    #         raw_preds = trainer.predict(test_dataset=test_dataset).predictions
+    #         if is_classification:
+    #             preds = np.argmax(raw_preds, axis=1)
+    #         else:
+    #             preds = raw_preds.squeeze()
+
+    #         # 3. 写文件
+    #         output_test_file = os.path.join(
+    #             our_args.output_dir, f"test_results_{data_args.task_name}.txt"
+    #         )
+    #         if trainer.is_world_process_zero():
+    #             with open(output_test_file, "w") as writer:
+    #                 writer.write("index\tprediction\n")
+    #                 for idx, pred in enumerate(preds):
+    #                     if not is_classification:
+    #                         # 回归直接写浮点数
+    #                         writer.write(f"{idx}\t{pred:.3f}\n")
+    #                     else:
+    #                         # 分类把 id 转回标签名
+    #                         if isinstance(label_feat, ClassLabel):
+    #                             label_str = label_feat.int2str(int(pred))
+    #                         else:
+    #                             # fallback：直接用数字 id
+    #                             label_str = str(int(pred))
+    #                         writer.write(f"{idx}\t{label_str}\n")
+
+    #         # 4. 把结果也存进 dict
+    #         test_results[data_args.task_name] = preds.tolist()
+
+    #     # 5. 合并并返回
+    #     all_results = {}
+    #     all_results.update(eval_results)    # 原来的评估结果
+    #     all_results.update(test_results)    # 新的预测结果
+    #     return all_results
+
+
 
 
 if __name__ == "__main__":
