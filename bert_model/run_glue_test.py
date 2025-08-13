@@ -25,42 +25,6 @@ initial_memory_allocated = torch.cuda.memory_allocated()
 initial_memory_cached = torch.cuda.memory_cached()
 
 from torch import nn
-import copy,json
-from transformers import TrainerCallback
-from dataclasses import asdict
-
-# class MergeSaveFullModelCallback(TrainerCallback):
-#     """
-#     每次 `trainer.save_checkpoint()` 之后：
-#     1. 拷贝一份模型并 merge → 保存完整权重
-#     2. 若这一步被判定为最佳，则把 `best_model_checkpoint` 指到完整权重目录
-#     """
-#     def on_save(self, args, state, control, **kwargs):
-#         peft_model: PeftModel = kwargs["model"]
-#         #trainer      = kwargs["trainer"]
-
-#         # 判断这次 save 是否被官方标为 'best'
-#         this_ckpt_dir = os.path.join(args.output_dir, f"checkpoint-{state.global_step}")
-#         is_best_now   = (
-#             state.best_model_checkpoint is not None and
-#             os.path.samefile(state.best_model_checkpoint, this_ckpt_dir)
-#         )
-
-#         # 1️⃣ 深拷贝后 merge（不会影响主模型）
-#         merged = copy.deepcopy(peft_model).merge_and_unload()
-#         full_dir = os.path.join(this_ckpt_dir, "full_model")
-#         merged.save_pretrained(full_dir)  # ← 保存 dense 权重
-#         #kwargs["train_dataloader"].dataset.tokenizer.save_pretrained(full_dir)  # 如果需要 tokenizer
-
-#         # 2️⃣ 如果它刚好是当前最优 → 把 best_model_checkpoint 改成 dense 目录
-#         if is_best_now:
-#             state.best_model_checkpoint = full_dir
-#             # 同时写回 trainer_state.json 方便 resume
-#             with open(os.path.join(args.output_dir, "trainer_state.json"), "w") as f:
-#                 json.dump(asdict(state), f, indent=2, sort_keys=True)
-
-#         return control
-
 class NewLoRATrainer(Trainer):
     def training_step(
         self,
@@ -227,6 +191,9 @@ def main():
         output_mode = glue_output_modes[data_args.task_name]
     except KeyError:
         raise ValueError("Task not found: %s" % (data_args.task_name))
+
+    best_model_path = "/scratch/pawsey1001/haodongyang/experiment/loretta/bert_model/output/deberta-v3-base/newlora/RTE-20250514191952/checkpoint-148"
+
     config = AutoConfig.from_pretrained(
         model_args.config_name if model_args.config_name else model_args.model_name_or_path,
         num_labels=num_labels,
@@ -239,68 +206,9 @@ def main():
         from_tf=bool(".ckpt" in model_args.model_name_or_path),
         config=config,
     )
-
-    if our_args.tuning_type == 'lora':
-        from peft import get_peft_model, LoraConfig, TaskType
-        peft_config = LoraConfig(task_type=TaskType.SEQ_CLS, inference_mode=False, r=our_args.lora_r,
-                                 lora_alpha=our_args.lora_alpha,
-                                 target_modules=["query_proj", "key_proj", "value_proj", "intermediate.dense", "output.dense", "attention.output.dense"],
-                                 lora_dropout=0)
-        model = get_peft_model(model, peft_config)
-
-    if our_args.tuning_type == 'pissa':
-        from peft import get_peft_model, LoraConfig, TaskType
-        peft_config = LoraConfig(task_type=TaskType.SEQ_CLS, inference_mode=False, r=our_args.lora_r, init_lora_weights="pissa",
-                                 lora_alpha=our_args.lora_alpha,
-                                 target_modules=["query_proj", "key_proj", "value_proj", "intermediate.dense", "output.dense", "attention.output.dense"],
-                                 lora_dropout=0)
-        model = get_peft_model(model, peft_config)
+    from peft import PeftModel, PeftConfig
+    model = PeftModel.from_pretrained(model, best_model_path)
     
-    if our_args.tuning_type == 'adapters':
-        from peft_local import BottleneckConfig, get_peft_model, TaskType  # noqa: E402
-        bottleneck_size: int = 64
-        non_linearity: str = "relu"
-        adapter_dropout: float = 0.0
-        use_parallel_adapter: bool = False
-        use_adapterp: bool = False
-        target_modules: List[str] = None
-        scaling: Union[float, str] = 1.0
-        peft_config = BottleneckConfig(
-            bottleneck_size=bottleneck_size,
-            non_linearity=non_linearity,
-            adapter_dropout=adapter_dropout,
-            use_parallel_adapter=use_parallel_adapter,
-            use_adapterp=use_adapterp,
-            target_modules=target_modules,
-            scaling=scaling,
-            bias="none",
-            task_type=TaskType.SEQ_CLS,
-        )
-        model = get_peft_model(model, peft_config)
-        for name, param in model.named_parameters():
-            if 'Norm' in name:
-                param.requires_grad = True
-    if our_args.tuning_type == 'bitfit':
-        for name, param in model.named_parameters():
-            if 'bias' in name:
-                param.requires_grad = True
-            else:
-                param.requires_grad = False
-    if our_args.tuning_type == 'prompt':
-        from peft import get_peft_model, TaskType, PromptTuningConfig
-        peft_config = PromptTuningConfig(task_type="SEQ_CLS", num_virtual_tokens=10)
-        model = get_peft_model(model, peft_config)
-    if our_args.tuning_type == 'ia3':
-        from peft import get_peft_model, IA3Config, TaskType
-        peft_config = IA3Config(
-            task_type=TaskType.SEQ_CLS, target_modules=None,
-            # feedforward_modules=["out_proj"]
-        )
-        model = get_peft_model(model, peft_config)
-    if our_args.tuning_type == 'ptune':
-        from peft import get_peft_model, TaskType, PromptEncoderConfig
-        peft_config = PromptEncoderConfig(task_type="SEQ_CLS", num_virtual_tokens=100, encoder_hidden_size=128)
-        model = get_peft_model(model, peft_config)
 
     # logger.info("Total Parameter Count: {}M".format(model.num_parameters() / 1000 / 1000))
     # logger.info("Total and trainable params: {}".format(str(get_parameter_number(model))))
@@ -399,30 +307,6 @@ def main():
         eval_dataset = eval_dataset.shuffle(seed=our_args.seed).select([i for i in range(subset_size)])
 
 
-    if our_args.tuning_type == 'adalora':
-        from peft import get_peft_model, AdaLoraConfig, TaskType
-        peft_config = AdaLoraConfig(task_type=TaskType.SEQ_CLS, inference_mode=False, init_r=our_args.lora_r, target_r=our_args.target_r, 
-                                 tinit=our_args.init_warmup, tfinal=our_args.final_warmup, deltaT=our_args.mask_interval, total_step = len(train_dataset) * our_args.num_train_epochs,
-                                 lora_alpha=our_args.lora_alpha,
-                                 orth_reg_weight=our_args.coef,
-                                 lora_dropout=0,
-                                 target_modules=["query","key","value","intermediate.dense","output.dense","attention.output.dense"]
-                                 )
-        model = get_peft_model(model, peft_config)
-    
-    if our_args.tuning_type == 'newlora':
-        from peft import get_peft_model, AdaLoraConfig, TaskType
-        peft_config = AdaLoraConfig(task_type=TaskType.SEQ_CLS, inference_mode=False, target_r=our_args.target_r, r=our_args.lora_r, p_keep=our_args.p_keep, init_lora_weights="pissa", total_step = 10700, #len(train_dataset) * our_args.num_train_epochs // our_args.per_device_train_batch_size,
-                                 lora_alpha=our_args.lora_alpha,
-                                 target_modules=["query_proj", "key_proj", "value_proj", "intermediate.dense", "output.dense", "attention.output.dense"],
-                                 lora_dropout=0)
-        model = get_peft_model(model, peft_config)
-
-        print("=======================================")
-        print("total_step:")
-        print(len(train_dataset) * our_args.num_train_epochs // our_args.per_device_train_batch_size)
-        print("=======================================")
-
     logger.info("Total Parameter Count: {}M".format(model.num_parameters() / 1000 / 1000))
     logger.info("Total and trainable params: {}".format(str(get_parameter_number(model))))
 
@@ -437,44 +321,20 @@ def main():
 
         return compute_metrics_fn
 
-    if our_args.tuning_type == 'newlora':
-        trainer = NewLoRATrainer(
-            model=model,
-            args=our_args,
-            train_dataset=train_dataset,
-            eval_dataset=eval_dataset,
-            compute_metrics=build_compute_metrics_fn(data_args.task_name),
-            
-        )
-        # callbacks=[MergeSaveFullModelCallback()], 
-        # callbacks=[EpochEndCallback(model)],
-        
 
-    elif our_args.tuning_type == 'adalora':
-        trainer = AdaLoRATrainer(
-            model=model,
-            args=our_args,
-            train_dataset=train_dataset,
-            eval_dataset=eval_dataset,
-            compute_metrics=build_compute_metrics_fn(data_args.task_name),
-        )
-
-    else:
-        trainer = Trainer(
-            model=model,
-            args=our_args,
-            train_dataset=train_dataset,
-            eval_dataset=eval_dataset,
-            compute_metrics=build_compute_metrics_fn(data_args.task_name),
-        )
+    trainer = Trainer(
+        model=model,
+        args=our_args,
+        train_dataset=train_dataset,
+        eval_dataset=eval_dataset,
+        compute_metrics=build_compute_metrics_fn(data_args.task_name),
+    )
 
     # Training
     model.eval()
     memory_used_after_part = torch.cuda.memory_allocated() - initial_memory_allocated
     print(f"Memory used after the specific part: {memory_used_after_part / (1024 ** 2)} MB")
     if our_args.do_train:
-        print("Trainer device:", trainer.args.device)                           # 应该是 cuda
-        print("Model parameters on:", next(trainer.model.parameters()).device)
         trainer.train()
         trainer.save_model()
         if trainer.is_world_process_zero():
@@ -483,6 +343,15 @@ def main():
         peft_model = trainer.model  # 包含了你训练好的分类头
         merged_model = peft_model.merge_and_unload()
         merged_model.save_pretrained(our_args.output_dir)
+
+    
+    # TODO:delet
+
+
+
+
+
+
 
     # Evaluation
     eval_results = {}
@@ -518,9 +387,9 @@ def main():
 
             eval_results.update(eval_result)
 
-    print("==========================")
-    print(trainer.state.best_model_checkpoint)
-    print("==========================")
+    # print("==========================")
+    # print(trainer.state.best_model_checkpoint)
+    # print("==========================")
 
     # peft_model = trainer.model  # 包含了你训练好的分类头
     # merged_model = peft_model.merge_and_unload()
