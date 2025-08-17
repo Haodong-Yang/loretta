@@ -20,6 +20,8 @@ from transformers import (
     set_seed,
 )
 
+from transformers import DataCollatorWithPadding
+
 logger = logging.getLogger(__name__)
 initial_memory_allocated = torch.cuda.memory_allocated()
 initial_memory_cached = torch.cuda.memory_cached()
@@ -210,6 +212,9 @@ def main():
                      + "target-" + str(our_args.target_r) + '-p_keep-' + str(our_args.p_keep)
     wandb.init(project=f"<{our_args.wandb_project}>", name=wandb_run_name)
     set_seed(our_args.seed)
+    print("=======================================")
+    print("seed:",our_args.seed)
+    print("=======================================")
     task_name_map = {
         'sst2': 'sst-2',
         'stsb': 'sts-b',
@@ -372,25 +377,41 @@ def main():
         model.config.label2id = {l: i for i, l in enumerate(label_list)}
         model.config.id2label = {id: label for label, id in config.label2id.items()}
 
+    # def tokenize_function(examples):
+    #             # Tokenize the texts
+    #     texts = (
+    #         (examples[sentence1_key],) if sentence2_key is None else (examples[sentence1_key], examples[sentence2_key])
+    #     )
+    #     result = tokenizer(*texts, padding='max_length', max_length=128, truncation=True)
+
+    #     if "label" in examples:
+    #         if label_to_id is not None:
+    #             # Map labels to IDs (not necessary for GLUE tasks)
+    #             result["labels"] = [label_to_id[l] for l in examples["label"]]
+    #         else:
+    #             # In all cases, rename the column to labels because the model will expect that.
+    #             result["labels"] = examples["label"]
+    #     return result
+    #     # return tokenizer(examples['sentence1','sentence2'], truncation=True, padding='max_length',
+    #     #                  max_length=128)
     def tokenize_function(examples):
-                # Tokenize the texts
+    # 组织输入文本（句对或单句）
         texts = (
-            (examples[sentence1_key],) if sentence2_key is None else (examples[sentence1_key], examples[sentence2_key])
+            (examples[sentence1_key],)
+            if sentence2_key is None
+            else (examples[sentence1_key], examples[sentence2_key])
         )
-        result = tokenizer(*texts, padding='max_length', max_length=128, truncation=True)
+        # 只做截断；不要在这里 padding='max_length'
+        result = tokenizer(*texts, truncation=True, max_length=128)
 
         if "label" in examples:
             if label_to_id is not None:
-                # Map labels to IDs (not necessary for GLUE tasks)
                 result["labels"] = [label_to_id[l] for l in examples["label"]]
             else:
-                # In all cases, rename the column to labels because the model will expect that.
                 result["labels"] = examples["label"]
         return result
-        # return tokenizer(examples['sentence1','sentence2'], truncation=True, padding='max_length',
-        #                  max_length=128)
 
-    dataset = dataset.map(tokenize_function, batched=True)
+    dataset = dataset.map(tokenize_function, batched=True, num_proc=4, remove_columns=dataset["train"].column_names)
     train_dataset = dataset["train"]
     eval_dataset = dataset["validation_matched" if data_args.task_name == "mnli" else "validation"]
     test_dataset = dataset["test_matched" if data_args.task_name == "mnli" else "test"]
@@ -398,6 +419,10 @@ def main():
         subset_size = 1000  # Change this to the desired size of your subset
         eval_dataset = eval_dataset.shuffle(seed=our_args.seed).select([i for i in range(subset_size)])
 
+    data_collator = DataCollatorWithPadding(
+        tokenizer=tokenizer,
+        pad_to_multiple_of=8 if (getattr(our_args, "fp16", False) or getattr(our_args, "bf16", False)) else None
+    )
 
     if our_args.tuning_type == 'adalora':
         from peft import get_peft_model, AdaLoraConfig, TaskType
@@ -444,6 +469,7 @@ def main():
             train_dataset=train_dataset,
             eval_dataset=eval_dataset,
             compute_metrics=build_compute_metrics_fn(data_args.task_name),
+            data_collator=data_collator,  
             
         )
         # callbacks=[MergeSaveFullModelCallback()], 
@@ -457,6 +483,7 @@ def main():
             train_dataset=train_dataset,
             eval_dataset=eval_dataset,
             compute_metrics=build_compute_metrics_fn(data_args.task_name),
+            data_collator=data_collator,  
         )
 
     else:
@@ -466,6 +493,7 @@ def main():
             train_dataset=train_dataset,
             eval_dataset=eval_dataset,
             compute_metrics=build_compute_metrics_fn(data_args.task_name),
+            data_collator=data_collator,  
         )
 
     # Training

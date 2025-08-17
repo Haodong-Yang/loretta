@@ -29,7 +29,7 @@ python run_glue_v5.py \
   --data_dir=default \
   --logging_dir="$current_path/logs/$TASK-$BS-$LR-$MODEL_NAME-$MODE-${20}-$(date +"%Y%m%d%H%M%S")" \
   --model_name_or_path=$MODEL --tokenizer_name=$MODEL --eval_strategy=steps --eval_steps=500 --logging_steps=50 \
-  --overwrite_output_dir --save_strategy=steps --save_steps=500 --task_name=$TASK --warmup_step=500 --learning_rate=$LR \
-  --max_steps=1000 --per_device_train_batch_size=$BS --output_dir="$current_path/output/$MODEL_NAME/$MODE/$OUTPUT_PATH-$(date +"%Y%m%d%H%M%S")" --max_seq_length=128 \
+  --overwrite_output_dir --save_strategy=steps --save_steps=500 --task_name=$TASK --warmup_steps=500 --learning_rate=$LR \
+  --num_train_epochs=$EPOCH --per_device_train_batch_size=$BS --output_dir="$current_path/output/$MODEL_NAME/$MODE/$OUTPUT_PATH-$(date +"%Y%m%d%H%M%S")" --max_seq_length=128 \
   --tuning_type=$MODE --do_train --do_eval --do_predict --lora_r=$RANK --target_r=$TARGET --p_keep=$KEEP \
   --load_best_model_at_end --metric_for_best_model="eval_loss" --greater_is_better=False --save_safetensors=False
